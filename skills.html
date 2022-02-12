@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store" />
+	<meta name="copyright" content="Vaibhav Mojidra" />
+	<meta name="keywords"
+		content="vaibhav,mojidra,Vaibhav Mojidra,vaibhav mojidra,Vaibhav,mojidra,java,python,android java,android,react native,flutter,ios,swift,kotlin" />
+	<meta name="DC.title" content="Vaibhav Mojidra" />
+	<meta name="title" content="Vaibhav Mojidra" />
+	<meta name="robots" content="index,follow">
+	<meta name="author" content="Vaibhav Mojidra" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.vaibhavmojidra.ga">
+	<meta property="og:title" content="Vaibhav Mojidra">
+	<meta property="og:description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store">
+	<meta property="og:image" content="assets/img/profile/tab_icon.png">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.vaibhavmojidra.ga">
+	<meta property="twitter:title" content="Vaibhav Mojidra">
+	<meta property="twitter:description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store">
+	<meta property="twitter:image" content="assets/img/profile/tab_icon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
+	<script type="text/javascript" src="assets/js/my_script.js"></script>
+	<script type="text/javascript" src="assets/js/bs4pop.js"></script>
+	<script type="text/javascript" src="assets/js/apps.js"></script>
+	<script type="text/javascript" src="assets/js/github_repos.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			let status = (getDarkModeStatus() === "ON" ? true : false);
+			document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png";
+			darkMode(status);
+			setSkills();
+			initNav();
+			setTimeout(() => {
+				bs4pop.notice('<h5>Got any feedback & suggestions? <a href="feedback.html">Click Here</a></h5>', {
+					type: 'info',
+					position: 'bottomright',
+					appendType: 'append',
+					closeBtn: 'true',
+					className: '',
+					autoClose: '10000'
+				})
+			}, 20000);
+		});
+		function setSkills() {
+			let skills = [
+				{ title: "C++", level: 20 },
+				{ title: "C", level: 40 },
+				{ title: "Java", level: 75 },
+				{ title: "Enterprise Java", level: 60 },
+				{ title: "Android using Java", level: 75 },
+				{ title: "Android using Kotlin", level: 75 },
+				{ title: "Apache Cordova", level: 75 },
+				{ title: "React Native", level: 60 },
+				{ title: "Node JS", level: 40 },
+				{ title: "Express JS", level: 40 },
+				{ title: "React JS", level: 20 },
+				{ title: "Hibernate framework", level: 60 },
+				{ title: "Spring framework", level: 20 },
+				{ title: "Javascript ES6", level: 60 },
+				{ title: "HTML", level: 60 },
+				{ title: "CSS", level: 60 },
+				{ title: "Python", level: 40 },
+				{ title: "Firebase", level: 75 },
+				{ title: "Microsoft SQL Server", level: 60 },
+				{ title: "MySQL", level: 40 },
+				{ title: "Mongo DB", level: 40 },
+				{ title: "ngrok", level: 40 },
+				{ title: "Mongoose", level: 40 },
+				{ title: "Android MVVM", level: 60 },
+				{ title: "Android LiveData", level: 60 },
+				{ title: "Android Retrofit", level: 40 },
+				{ title: "Android Dagger 2", level: 60 },
+				{ title: "Android WorkManager", level: 40 },
+				{ title: "Android Room DB", level: 60 },
+				{ title: "Android Jetpack's Navigation", level: 60 }
+			];
+			let text = "";
+			skills.forEach((item) => {
+				switch (item.level) {
+					case 20:
+						text += '<div class="col-lg-4" style="padding-left: 10px;padding-right: 10px;margin-top:10px"><div class="skill"><h5 class="my_text">' + item.title + '</h5><div class="progress_back"></div><div class="progress" style="width: ' + item.level + '%;background-color: #ffd600"></div></div></div>';
+						break;
+					case 40:
+						text += '<div class="col-lg-4" style="padding-left: 10px;padding-right: 10px;margin-top:10px"><div class="skill"><h5 class="my_text">' + item.title + '</h5><div class="progress_back"></div><div class="progress" style="width: ' + item.level + '%;background-color: #00b0ff"></div></div></div>';
+						break;
+					case 60:
+						text += '<div class="col-lg-4" style="padding-left: 10px;padding-right: 10px;margin-top:10px"><div class="skill"><h5 class="my_text">' + item.title + '</h5><div class="progress_back"></div><div class="progress" style="width: ' + item.level + '%;background-color: #00c853"></div></div></div>';
+						break;
+					case 75:
+						text += '<div class="col-lg-4" style="padding-left: 10px;padding-right: 10px;margin-top:10px"><div class="skill"><h5 class="my_text">' + item.title + '</h5><div class="progress_back"></div><div class="progress" style="width: ' + item.level + '%;background-color: #ff9800"></div></div></div>';
+						break;
+				}
+			});
+			document.getElementById('myskills').innerHTML = text;
+			text = "";
+			let handsOns = [
+				"Developing Android Apps using Java as well as Kotlin",
+				"Deploying App on Google Play Store", "Internal testing on Google Play Console.",
+				"Developing Web Apps using Enterprise Java and Hibernate",
+				"Developing Hybrid Cross Platform App using Apache Cordova.",
+				"Adding, Modifying, Committing, Pushing repository on Git",
+				"Using Firebase as server of mobile apps.",
+				"Optimizing app size for android",
+				"Using app buddle over play console for dynamic changes",
+				"Hosting websites over GitHub",
+				"Designing responsive web pages using Bootstrap 4",
+				"Debugging android apps",
+				"Deploying apps to production",
+				"Unit testing",
+				"Developing API using Express Js, Node Js and MongDB using Mongoose API"
+			];
+			handsOns.forEach((item) => {
+				text += '<div class="col-xl-6" style="padding-left: 10px;padding-right: 10px;margin-top:10px"><h5 class="my_text"><b>✓</b> ' + item + '</h5></div>'
+			})
+			document.getElementById('myhandsOn').innerHTML = text;
+		}
+	</script>
+	<style type="text/css">
+		.skill {
+			padding-left: 10px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-right: 5px;
+			margin-top: 10px;
+			position: relative;
+			animation: fadeIn 3s;
+			-webkit-animation: fadeIn 3s;
+			-moz-animation: fadeIn 3s;
+			-o-animation: fadeIn 3s;
+			-ms-animation: fadeIn 3s;
+		}
+
+		.progress_back {
+			width: 80%;
+			height: 10px;
+			background-color: #e8eaf6;
+			border-radius: 4px;
+			position: absolute;
+		}
+
+		.progress {
+			height: 10px;
+			border-radius: 4px;
+			position: absolute;
+			z-index: 1000;
+		}
+	</style>
+	<title>Vaibhav Mojidra</title>
+	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
+</head>
+
+<body class="page_background">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav_bar_background">
+		<a class="navbar-brand" href="#">Vaibhav Mojidra</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Profile</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="education_certifications.html">Education & Certifications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="work_exp.html">Work Experience</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="apps" href="apps.html">Apps</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="github_repo" href="github_repos.html">Github repositories</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item active" id="darkModeLabel">
+					<a class="nav-link">Dark Mode <img src="assets/img/nav/off.png" style="margin-left: 5px" width="41"
+							height="20" class="d-inline-block align-center" alt="" id="darkModeSwitch"
+							onclick="setDarkModeStatus()" /><span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid" style="margin-top: 10px;margin-bottom: 10px">
+		<div class="row" id="myskills"></div>
+		<br /><br />
+		<h2 class="my_text my_fade_in">Hands on:</h2>
+		<div class="row my_fade_in" id="myhandsOn"></div>
+	</div>
+
+</body>
+
+</html>
+
+
+<!-- 
+	#ffd600 --20
+	#00b0ff --40
+	#00c853 --60
+	#c62828 --75
+
+ -->

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store" />
+	<meta name="copyright" content="Vaibhav Mojidra" />
+	<meta name="keywords"
+		content="vaibhav,mojidra,Vaibhav Mojidra,vaibhav mojidra,Vaibhav,mojidra,java,python,android java,android,react native,flutter,ios,swift,kotlin" />
+	<meta name="DC.title" content="Vaibhav Mojidra" />
+	<meta name="title" content="Vaibhav Mojidra" />
+	<meta name="robots" content="index,follow">
+	<meta property="twitter:image" content="../../assets/img/profile/tab_icon.png">
+	<meta property="og:image" content="../../assets/img/profile/tab_icon.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
+	<script type="text/javascript" src="assets/js/my_script.js"></script>
+	<script type="text/javascript" src="assets/js/bs4pop.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			let status = (getDarkModeStatus() === "ON" ? true : false)
+			darkMode(status)
+		})
+		const copyToClipBoard = txt => {
+			if (!navigator.clipboard) {
+				bs4pop.notice('Unable to copy to clipboard', {
+					type: 'danger',
+					position: 'bottomright',
+					appendType: 'append',
+					closeBtn: 'true',
+					className: ''
+				})
+			} else {
+				navigator.clipboard.writeText(txt)
+					.then(() => {
+						bs4pop.notice('Copied to Clipboard', {
+							type: 'success',
+							position: 'bottomright',
+							appendType: 'append',
+							closeBtn: 'true',
+							className: ''
+						})
+					})
+					.catch(err => {
+						bs4pop.notice('Unable to copy to clipboard', {
+							type: 'danger',
+							position: 'bottomright',
+							appendType: 'append',
+							closeBtn: 'true',
+							className: ''
+						})
+					})
+			}
+		}
+	</script>
+
+	<title>Vaibhav Mojidra</title>
+	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon" />
+</head>
+
+<body class="page_background">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav_bar_background">
+		<a class="navbar-brand"><span style="color: #fdfdfd">Contact Mail Address</span></a>
+	</nav>
+	<br>
+	<div class="container" style="padding-left: 30px;padding-right: 30px;">
+		<div class="row">
+			<div class="col-lg-6">
+				<h4 style="padding: 5px;"><a href="mailto:vaibhavmojidra@gmail.com">vaibhavmojidra@gmail.com</a></h4>
+			</div>
+			<div class="col-lg-6">
+				<button class="btn my_button" style="width: 150px;"
+					onclick="window.location.href ='https://mail.google.com/'">Open
+					Gmail</button>
+				<button class="btn my_button" style="margin-left: 15px;"
+					onclick="copyToClipBoard('vaibhavmojidra@gmail.com')">Copy to
+					Clipboard</button>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-lg-6">
+				<h4 style="padding: 5px;"><a href="mailto:vaibhavmojidra@outlook.com">vaibhavmojidra@outlook.com</a>
+				</h4>
+			</div>
+			<div class="col-lg-6">
+				<button class="btn my_button" style="width: 150px;"
+					onclick="window.location.href ='https://outlook.live.com/mail/'">Open
+					Outlook</button>
+				<button class="btn my_button" style="margin-left: 15px;"
+					onclick="copyToClipBoard('vaibhavmojidra@outlook.com')">Copy to Clipboard</button>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-lg-6">
+				<h4 style="padding: 5px;"><a href="mailto:vaibhavmojidra@yahoo.com">vaibhavmojidra@yahoo.com</a></h4>
+			</div>
+			<div class="col-lg-6">
+				<button class="btn my_button" style="width: 150px;"
+					onclick="window.location.href ='https://mail.yahoo.com/'">Open Yahoo
+					Mail</button>
+				<button class="btn my_button" style="margin-left: 15px;"
+					onclick="copyToClipBoard('vaibhavmojidra@yahoo.com')">Copy to Clipboard</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

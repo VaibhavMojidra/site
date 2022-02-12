@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store" />
+	<meta name="copyright" content="Vaibhav Mojidra" />
+	<meta name="keywords"
+		content="vaibhav,mojidra,Vaibhav Mojidra,vaibhav mojidra,Vaibhav,mojidra,java,python,android java,android,react native,flutter,ios,swift,kotlin" />
+	<meta name="DC.title" content="Vaibhav Mojidra" />
+	<meta name="title" content="Vaibhav Mojidra" />
+	<meta name="robots" content="index,follow">
+
+	<meta name="author" content="Vaibhav Mojidra" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.vaibhavmojidra.ga">
+	<meta property="og:title" content="Vaibhav Mojidra">
+
+	<meta property="og:description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store">
+	<meta property="og:image" content="assets/img/profile/tab_icon.png">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.vaibhavmojidra.ga">
+	<meta property="twitter:title" content="Vaibhav Mojidra">
+
+	<meta property="twitter:description"
+		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store">
+	<meta property="twitter:image" content="assets/img/profile/tab_icon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/my_script.js"></script>
+	<script type="text/javascript" src="assets/js/bs4pop.js"></script>
+	<script type="text/javascript" src="assets/js/apps.js"></script>
+	<script type="text/javascript" src="assets/js/github_repos.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			let status = (getDarkModeStatus() === "ON" ? true : false);
+			document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png";
+			darkMode(status);
+			initNav();
+			try {
+				document.getElementById("profile_image").style.transition = "all 1s";
+				document.getElementById("profile_image").style.transform = "scale(1.1)";
+			} catch (e) { }
+			if (status === false) {
+				setTimeout(() => {
+					bs4pop.notice('You can use dark mode to reduce eye straining.', {
+						type: 'success',
+						position: 'bottomright',
+						appendType: 'append',
+						closeBtn: 'true',
+						className: ''
+					})
+				}, 5000);
+			}
+		});
+	</script>
+	<style>
+		.wrapper {
+			max-width: 200px;
+			width: 100%;
+		}
+
+		.carousel-item-next,
+		.carousel-item-prev,
+		.carousel-item.active {
+			display: block !important;
+		}
+
+		.shadow {
+			-moz-box-shadow: inset 0 0 10px #000000;
+			-webkit-box-shadow: inset 0 0 10px #000000;
+			box-shadow: inset 0 0 10px #000000;
+		}
+	</style>
+	<title>Vaibhav Mojidra</title>
+	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
+</head>
+
+<body class="page_background">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav_bar_background">
+		<a class="navbar-brand" href="#">Vaibhav Mojidra</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="education_certifications.html">Education & Certifications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="work_exp.html">Work Experience</a>
+				</li>
+				<li class=" nav-item">
+					<a class="nav-link" href="skills.html">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="apps" href="apps.html">Apps</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="github_repo" href="github_repos.html">GitHub Repositories</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item active" id="darkModeLabel">
+					<a class="nav-link">Dark Mode <img src="assets/img/nav/off.png" style="margin-left: 5px" width="41"
+							height="20" class="d-inline-block align-center" alt="" id="darkModeSwitch"
+							onclick="setDarkModeStatus()" /><span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="demo" class="carousel slide shadow" data-ride="carousel" width="100%" height="300px">
+
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="assets/img/coverpics/C1.png" style="object-fit: cover;" alt="Vaibhav Mojidra" width="100%"
+					height="300px">
+			</div>
+			<div class="carousel-item">
+				<img src="assets/img/coverpics/C2.jpg" style="object-fit: cover;" alt="Vaibhav Mojidra" width="100%"
+					height="300px">
+			</div>
+			<div class="carousel-item">
+				<img src="assets/img/coverpics/C3.png" style="object-fit: cover;" alt="Vaibhav Mojidra" width="100%"
+					height="300px">
+			</div>
+			<div class="carousel-item">
+				<img src="assets/img/coverpics/C4.jpg" style="object-fit: cover;" alt="Vaibhav Mojidra" width="100%"
+					height="300px">
+			</div>
+			<div class="carousel-item">
+				<img src="assets/img/coverpics/C5.jpg" style="object-fit: cover;" alt="Vaibhav Mojidra" width="100%"
+					height="300px">
+			</div>
+		</div>
+	</div>
+	<div class="about_container">
+		<img src="assets/img/profile/profile_pic.png" alt="Vaibhav Mojidra" width="225px" height="225px"
+			id="profile_image">
+	</div>
+	<div style="margin-top: 70px;margin-bottom: 70px">
+		<div class="container my_fade_in" style="padding-right: 30px;padding-left:30px;text-align: center;"><i
+				class="my_text">It's a pleasure to have you here. Thank you for taking the time. I'm Vaibhav Mojidra,
+				and
+				I'm passionate about developing software applications. Moreover, towards Mobile App development. On this
+				website you can see all the apps I've developed. Some of them are also available on Google Play Store.
+				On top of that, this website additionally shows off my Education, Work Experience, Skills, and other
+				coding practices in shape of Github Repositories. I'd appreciate it if you could have a peek at this
+				site.</i></div>
+		<div class="container my_fade_in" style="margin-top: 30px">
+			<div class="row" style="justify-content: center;">
+				<div class="col-">
+					<img src="assets/img/socials/light/instagram.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="insta"
+						onclick="window.location.href = 'https://www.instagram.com/vaibhavmojidra2311/';" />
+					<img src="assets/img/socials/light/facebook.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="facebook"
+						onclick="window.location.href = 'https://www.facebook.com/vaibhavmojidra2311';" />
+					<img src="assets/img/socials/light/twitter.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="twitter"
+						onclick="window.location.href = 'https://twitter.com/vaibhavmojidra';" />
+					<img src="assets/img/socials/light/linkedin.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="linkedin"
+						onclick="window.location.href = 'https://www.linkedin.com/in/vaibhav-mojidra-260733171';" />
+					<img src="assets/img/socials/light/snapchat.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="snapchat"
+						onclick="window.location.href = 'https://www.snapchat.com/add/vaibhavmojidra';" />
+				</div>
+				<div class="col-">
+					<img src="assets/img/socials/light/playstore.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="playstore"
+						onclick="window.location.href = 'https://play.google.com/store/apps/dev?id=5230170147318032032';" />
+					<img src="assets/img/socials/light/youtube.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="youtube"
+						onclick="window.location.href = 'https://www.youtube.com/channel/UCqDyWIOj8Rl1Xg7NwYy3A-g';" />
+					<img src="assets/img/socials/light/github.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="github"
+						onclick="window.location.href = 'https://github.com/VaibhavMojidra';" />
+					<img src="assets/img/socials/light/mail.png" alt="Vaibhav Mojidra" width="40px" height="40px"
+						class="social_icon" id="mail" onclick="window.location.href = 'emails.html'" />
+					<img src="assets/img/socials/light/stackoverflow.png" alt="Vaibhav Mojidra" width="40px"
+						height="40px" class="social_icon" id="stackoverflow"
+						onclick="window.location.href = 'https://stackoverflow.com/users/story/13474737?view=cv';" />
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container my_fade_in" style="padding-right: 30px;padding-left:30px;text-align: center;"><i
+				class="my_text">
+				<h4>Got any feedback & suggestions? <a href="feedback.html">Click Here</a></h4>
+			</i></div>
+	</div>
+
+
+</body>
