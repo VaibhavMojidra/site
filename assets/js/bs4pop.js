@@ -1,35 +1,23 @@
-
-/**
- * 基于bootstrap4，封装的消息组件 dialog, alert, confirm, prompt, notice，支持鼠标及手势拖拽
- * @author 大花猫花大
- * @date 2021-01-01
- * @version 1.1
- * https://github.com/aiv367/bootstrap4.bs4pop
- */
 (function () {
-
 	let bs4pop = {};
-
-	//对话框
 	bs4pop.dialog = function (opts) {
 
 		opts = $.extend(true, {
-			id: '',//'#xxx'，对话框ID，
+			id: '',
 			title: '',
-			content: '', //可以是 string、element，$object
-			className: '', //自定义样式
+			content: '',
+			className: '',
 			width: 500,
 			height: '',
-			target: 'body',//在什么dom内创建dialog
-
-			closeBtn: true, //是否有关闭按钮
-			hideRemove: true,//关闭时移除dom
-			escape: true, //Esc 退出
-			autoFocus: true,//初始化时自动获得焦点
-			show: true,//是否在一开始时就显示对话框
-			backdrop: true,//模态背景 true: 显示模态，false: 没有模态，'static': 显示模态，单击模态不关闭对话框
-			btns: [], //footer按钮 [{label: 'Button',	className: 'btn-primary',onClick(cb){}}]
-			drag: true,//是否启用拖拽
+			target: 'body',
+			closeBtn: true,
+			hideRemove: true,
+			escape: true,
+			autoFocus: true,
+			show: true,
+			backdrop: true,
+			btns: [],
+			drag: true,
 
 			onShowStart() { },
 			onShowEnd() { },
@@ -41,7 +29,7 @@
 			onDrag() { }
 		}, opts);
 
-		//得到 $el
+
 		let $el = opts.id !== '' ? $('#' + opts.id) : undefined;
 		if (!$el || !$el.length) {
 			$el = $(`
@@ -55,10 +43,8 @@
 			`);
 		}
 
-		//得到 $body
 		let $body = $el.find('.modal-body');
 
-		//创建 header
 		if (opts.closeBtn || opts.title) {
 
 			let $header = $('<div class="modal-header"></div>');
@@ -79,7 +65,6 @@
 
 		}
 
-		//创建 footer
 		if (opts.btns.length) {
 
 			let $footer = $('<div class="modal-footer"></div>');
@@ -95,12 +80,12 @@
 
 				$btn.on('click', evt => {
 
-					//提供手动关闭对话框的方法，以便于对话框延迟关闭
+
 					evt.hide = () => {
 						$el.modal('hide');
 					};
 
-					//如果返回不是false就自动隐藏dialog
+
 					if (btn.onClick(evt) !== false) {
 						$el.modal('hide');
 					}
@@ -115,24 +100,22 @@
 
 		}
 
-		//创建内容
 		if (typeof opts.content === 'string') {
 			$body.html(opts.content);
 		} else if (typeof opts.content === 'object') {
 			$body.empty();
-			$(opts.content).contents().appendTo($body);//移动dom到 modal-body下
+			$(opts.content).contents().appendTo($body);
 		}
 
-		//设置属性
+
 		opts.id && $el.attr('id', opts.id);
 		opts.className && $el.addClass(opts.className);
 		opts.width && $el.find('.modal-dialog').width(opts.width).css('max-width', opts.width);
 		opts.height && $el.find('.modal-dialog').height(opts.height);
-		opts.isCenter && $el.find('.modal-dialog').addClass('modal-dialog-centered');//对话框屏幕居中
+		opts.isCenter && $el.find('.modal-dialog').addClass('modal-dialog-centered');
 
-		//绑定事件
 		opts.hideRemove && $el.on('hidden.bs.modal', function () {
-			$el.modal('dispose').remove();//移除dom
+			$el.modal('dispose').remove();
 		});
 
 		$el.on('show.bs.modal', opts.onShowStart);
@@ -145,7 +128,6 @@
 			return opts.onClose();
 		});
 
-		//拖拽
 		if (opts.drag) {
 			$el.attr('data-drag', 'drag');
 			drag({
@@ -167,10 +149,10 @@
 		$(opts.target).append($el);
 
 		$el.modal({
-			backdrop: opts.backdrop, //boolean or the string 'static'.Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.
-			keyboard: opts.escape, //Closes the modal when escape key is pressed
-			focus: opts.autoFocus, //Puts the focus on the modal when initialized.
-			show: opts.show //Shows the modal when initialized.
+			backdrop: opts.backdrop,
+			keyboard: opts.escape,
+			focus: opts.autoFocus,
+			show: opts.show
 		});
 
 		let result = {
@@ -193,12 +175,10 @@
 
 	};
 
-	//关闭全部
 	bs4pop.removeAll = function () {
 		$('[role="dialog"],.modal-backdrop').remove();
 	};
 
-	//拖拽
 	function drag(opts) {
 
 		opts = $.extend(true, {
@@ -225,7 +205,7 @@
 			let startData = {
 				pageX: pointEvt.pageX,
 				pageY: pointEvt.pageY,
-				targetPageX: opts.el.offset().left, //当前dom的位置信息
+				targetPageX: opts.el.offset().left,
 				targetPageY: opts.el.offset().top,
 			};
 
@@ -237,7 +217,7 @@
 				}
 
 				let moveData = {
-					pageX: pointEvt.pageX, //对于整个页面来说，包括了被卷去的body部分的长度
+					pageX: pointEvt.pageX,
 					pageY: pointEvt.pageY,
 					moveX: pointEvt.pageX - startData.pageX,
 					moveY: pointEvt.pageY - startData.pageY,
@@ -269,7 +249,6 @@
 
 	}
 
-	//对话框
 	bs4pop.alert = function (content, cb, opts) {
 
 		let dialogOpts = $.extend(true, {
@@ -293,7 +272,6 @@
 
 	};
 
-	//确认框
 	bs4pop.confirm = function (content, cb, opts) {
 
 		let dialogOpts = $.extend(true, {
@@ -367,7 +345,6 @@
 
 	};
 
-	// 消息框
 	bs4pop.notice = function (content, opts) {
 
 		opts = $.extend(true, {
@@ -380,20 +357,15 @@
 			className: '',
 
 		}, opts);
-
-		// 得到容器 $container
 		let $container = $('#alert-container-' + opts.position);
 		if (!$container.length) {
 			$container = $('<div id="alert-container-' + opts.position + '" class="alert-container"></div>');
 			$('body').append($container);
 		}
-
-		// alert $el
 		let $el = $(`
 			<div class="alert fade alert-${opts.type}" role="alert">${content}</div>
 		`);
 
-		// 关闭按钮
 		if (opts.autoClose) {
 			$el
 				.append(`
@@ -403,8 +375,6 @@
 				`)
 				.addClass('alert-dismissible');
 		}
-
-		//定时关闭
 		if (opts.autoClose) {
 
 			let t = setTimeout(() => {
@@ -423,8 +393,6 @@
 
 	};
 
-
-	//输出
 	if (typeof module !== 'undefined' && typeof exports === 'object') {
 		module.exports = bs4pop;
 	} else if (typeof define === 'function' && (define.amd || define.cmd)) {
