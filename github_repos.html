@@ -45,21 +45,21 @@
 	<script type="text/javascript" src="assets/js/github_repos.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function () {
-			let status = (getDarkModeStatus() === "ON" ? true : false);
-			document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png";
-			darkMode(status);
-			initNav();
-			let q = document.getElementById('searchBox').value.trim();
+		$(document).ready(() => {
+			initNav()
+			let status = (getDarkModeStatus() === "ON" ? true : false)
+			document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png"
+			darkMode(status)
+			let q = document.getElementById('searchBox').value.trim()
 			if (q === "") {
-				setRepos(repos);
+				setRepos(repos)
 			} else {
-				document.getElementById('dropdownMenu2').innerHTML = "Custom Search";
-				setRepos(repos.filter(item => item.repoName.toUpperCase().includes(q.toUpperCase())));
+				document.getElementById('dropdownMenu2').innerHTML = "Custom Search"
+				setRepos(repos.filter(item => item.repoName.toUpperCase().includes(q.toUpperCase())))
 			}
-			let m = window.innerWidth < 992 ? "0px" : "8px";
-			document.getElementById("SearchBoxItem").style.marginLeft = m;
-			document.getElementById("SearchBoxItem").style.marginRight = m;
+			let m = window.innerWidth < 992 ? "0px" : "8px"
+			document.getElementById("SearchBoxItem").style.marginLeft = m
+			document.getElementById("SearchBoxItem").style.marginRight = m
 			setTimeout(() => {
 				bs4pop.notice('Note these repositories are excluding Apps', {
 					type: 'warning',
@@ -76,8 +76,8 @@
 						closeBtn: 'true',
 						className: ''
 					})
-				}, 5000);
-			}, 2000);
+				}, 5000)
+			}, 2000)
 			setTimeout(() => {
 				bs4pop.notice('<h5>Got any feedback & suggestions? <a href="feedback.html">Click Here</a></h5>', {
 					type: 'info',
@@ -87,33 +87,33 @@
 					className: '',
 					autoClose: '10000'
 				})
-			}, 20000);
-		});
-		function onKeyPress(id) {
-			let query = id.value.trim();
+			}, 20000)
+		})
+		const onKeyPress = id => {
+			let query = id.value.trim()
 			if (query === "") {
-				id.value = "";
-				filter('All Repositories');
+				id.value = ""
+				filter('All Repositories')
 			} else {
-				document.getElementById('dropdownMenu2').innerHTML = "Custom Search";
-				setRepos(repos.filter(item => item.repoName.toUpperCase().includes(query.toUpperCase())));
+				document.getElementById('dropdownMenu2').innerHTML = "Custom Search"
+				setRepos(repos.filter(item => item.repoName.toUpperCase().includes(query.toUpperCase())))
 			}
 		}
-		function setRepos(repoList) {
-			let text = "";
+		const setRepos = repoList => {
+			let text = ""
 			repoList.forEach((item) => {
-				text += '<div class="row" style="padding-bottom: 10px;padding-top: 10px "><div class="col-lg-10"><h6 class="my_text">' + item.repoName + '</h6></div><div class="col-lg-2"><button class="btn btn-sm my_button"  onclick="window.location.href = \'' + item.repoUrl + '\';" >GitHub Repository</button></div></div>';
-			});
-			document.getElementById('myRepos').innerHTML = text;
+				text += '<div class="row" style="padding-bottom: 10px;padding-top: 10px "><div class="col-lg-10"><h6 class="my_text">' + item.repoName + '</h6></div><div class="col-lg-2"><button class="btn btn-sm my_button"  onclick="window.location.href = \'' + item.repoUrl + '\';" >GitHub Repository</button></div></div>'
+			})
+			document.getElementById('myRepos').innerHTML = text
 		}
-		function filter(value) {
+		const filter = value => {
 			if (value === "All Repositories") {
-				setRepos(repos);
+				setRepos(repos)
 			} else {
-				setRepos(repos.filter(item => item.tech === value));
+				setRepos(repos.filter(item => item.tech === value))
 			}
-			document.getElementById('dropdownMenu2').innerHTML = value;
-			document.getElementById('searchBox').value = "";
+			document.getElementById('dropdownMenu2').innerHTML = value
+			document.getElementById('searchBox').value = ""
 		}
 	</script>
 	<title>Vaibhav Mojidra</title>
@@ -150,15 +150,11 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item active" id="SearchBoxItem">
+				<li class="nav-item active" id="SearchBoxItem" style="align-items: center!important;display: flex;">
 					<input class="form-control mr-sm-2" type="search" placeholder="Search repositories.."
-						style="margin-top:4.5px;height: 30px;" aria-label="Search" onkeyup="onKeyPress(this)"
-						id="searchBox">
+						style="height: 30px;" aria-label="Search" onkeyup="onKeyPress(this)" id="searchBox">
 				</li>
 				<li class="nav-item active" id="darkModeLabel">
-					<a class="nav-link">Dark Mode <img src="assets/img/nav/off.png" style="margin-left: 5px" width="41"
-							height="20" class="d-inline-block align-center" alt="" id="darkModeSwitch"
-							onclick="setDarkModeStatus()" /><span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>

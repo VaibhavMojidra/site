@@ -23,7 +23,7 @@
   justify-content: center;
   margin-top: -80px;
   position: absolute;
-  z-index: 1000;
+  z-index: 5;
 }
 
 #profile_image{
@@ -86,4 +86,9 @@
 @-ms-keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
+}
+
+#darkModeLabel{
+  align-items: center!important;
+  display: flex;
 }

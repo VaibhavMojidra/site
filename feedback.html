@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta charset="utf-8" />
 	<meta name="description"
 		content="Here are all Apps, Projects, Git repositories that have been developed and managed by Vaibhav Mojidra and some of those apps have been published to Google Play Store" />
@@ -12,10 +12,10 @@
 	<meta name="DC.title" content="Vaibhav Mojidra" />
 	<meta name="title" content="Vaibhav Mojidra" />
 	<meta name="robots" content="index,follow">
-	<meta property="twitter:image" content="../../assets/img/profile/tab_icon.png">
-	<meta property="og:image" content="../../assets/img/profile/tab_icon.png">
+	<meta property="twitter:image" content="../../assets/img/profile/tab_icon.png" />
+	<meta property="og:image" content="../../assets/img/profile/tab_icon.png" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
@@ -28,14 +28,16 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
 	<script type="text/javascript" src="assets/js/my_script.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
+	<script type="text/javascript" src="assets/js/bs4pop.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<style>
 		.checked {
-			color: orange;
+			color: orange
 		}
 
 		.unchecked {
-			color: gray;
+			color: gray
 		}
 
 		.mystar {
@@ -43,14 +45,68 @@
 			cursor: pointer;
 			margin-left: 7px;
 			transition: opacity 5s linear;
-			transition-duration: 0.3s;
+			transition-duration: 0.3s
+		}
+
+		#MyButtonsDiv {
+			height: 0vh;
+			width: 100%;
+			position: fixed;
+			z-index: 999999;
+			margin-top: 100vh;
+			margin-bottom: 0vh;
+			margin-left: 0vw;
+			margin-right: 0vw;
+			opacity: 0.3;
+			background-color: var(--page_bg);
+			overflow-x: hidden;
+			overflow-y: hidden;
+			transition: 1.2s;
+			text-align: center
+		}
+
+		#headerDiv {
+			width: 100%;
+			height: 50px
+		}
+
+		#closeDiv {
+			float: right;
+			display: inline-block;
+			width: 70px;
+			height: 100%;
+			cursor: pointer
+		}
+
+		#titleDiv {
+			float: left;
+			display: inline-block;
+			width: -moz-calc(100% - 70px);
+			width: -webkit-calc(100% - 70px);
+			width: calc(100% - 70px);
+			height: 100%
 		}
 	</style>
 	<script type="text/javascript">
-		$(document).ready(function () {
-			let status = (getDarkModeStatus() === "ON" ? true : false);
-			darkMode(status);
+		$(document).ready(() => {
+			let status = (getDarkModeStatus() === "ON" ? true : false)
+			darkMode(status)
 		});
+		const openDialogDiv = () => {
+			document.getElementById("MyButtonsDiv").style.height = "100%"
+			document.getElementById("MyButtonsDiv").style.marginTop = "0%"
+			document.getElementById("MyButtonsDiv").style.opacity = "1"
+		}
+		const closeDialogDiv = () => {
+			document.getElementById("MyButtonsDiv").style.height = "0%"
+			document.getElementById("MyButtonsDiv").style.marginTop = "100%"
+			document.getElementById("MyButtonsDiv").style.opacity = "0.3"
+		}
+		const setDialogContent = (titleText, pageUrl) => {
+			openDialogDiv()
+			document.getElementById("title").innerHTML = titleText
+			document.getElementById("contentFrame").src = pageUrl
+		}
 	</script>
 
 	<title>Vaibhav Mojidra</title>
@@ -58,13 +114,26 @@
 </head>
 
 <body class="page_background">
+	<div id="MyButtonsDiv">
+		<div id="headerDiv" style="margin-top: 10px;">
+			<div id="titleDiv" style="text-align: left;">
+				<span style="font-size: 30px;padding-left: 15px;" id="title" class="my_text">Content</span>
+			</div>
+			<div id="closeDiv" style="padding-top: 10px;" onclick="closeDialogDiv()">
+				<span style="font-size: 20px;padding-right: 10px;" class="my_text">╳</span>
+			</div>
+		</div>
+		<iframe id="contentFrame" style="height: calc(100% - 70px);width: 100%;" frameBorder="0">
+
+		</iframe>
+	</div>
 	<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav_bar_background">
 		<a class="navbar-brand"><span style="color: #fdfdfd">Feedback & Suggestions</span></a>
 	</nav>
 	<br>
 	<div class="container" style="padding-left: 30px;padding-right: 30px;">
 		<div class="row">
-			<form id="feedback" method="post" onsubmit="postToGoogle();" style="flex-grow: 100;">
+			<form id="feedback" method="post" style="flex-grow: 100;">
 				<fieldset>
 					<label class="my_text" style="font-size: 20px;">Full Name</label>
 					<input class="form-control form-control-sm" name="entry.808102757" id="FN" type="text"
@@ -81,7 +150,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>Profile</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Profile tab Preview','https://vaibhavmojidra.ga/')">
+						onclick="setDialogContent('Profile tab Preview','index.html')">
 						Preview <b>Profile</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -93,7 +162,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>Education & Certifications</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('E & C tab Preview','https://vaibhavmojidra.ga/education_certifications.html')">Preview
+						onclick="setDialogContent('E & C tab Preview','education_certifications.html')">Preview
 						<b>Education & Certifications</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -105,7 +174,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>Work Experience</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Work Exp tab Preview','https://vaibhavmojidra.ga/work_exp.html')">Preview
+						onclick="setDialogContent('Work Exp tab Preview','work_exp.html')">Preview
 						<b>Work Experience</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -117,7 +186,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>Skills</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Skills tab Preview','https://vaibhavmojidra.ga/skills.html')">Preview
+						onclick="setDialogContent('Skills tab Preview','skills.html')">Preview
 						<b>Skills</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -129,7 +198,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>Apps</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Apps tab Preview','https://vaibhavmojidra.ga/apps.html')">Preview
+						onclick="setDialogContent('Apps tab Preview','apps.html')">Preview
 						<b>Apps</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -141,7 +210,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the <b>GitHub Repositories</b> tab</label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Git Repos tab Preview','https://vaibhavmojidra.ga/github_repos.html')">Preview
+						onclick="setDialogContent('Git Repos tab Preview','github_repos.html')">Preview
 						<b>GitHub Repositories</b>
 						tab</span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
@@ -153,7 +222,7 @@
 					<label class="my_text" style="font-size: 20px;">Any feedback or suggestions for any improvement in
 						the over all <b>Vaibhav Mojidra Website</b></label><br>
 					<span class="btn btn-sm btn-warning" style="margin-bottom: 15px;"
-						onclick="setDialogContent('Website Preview','https://vaibhavmojidra.ga/')">Preview
+						onclick="setDialogContent('Website Preview','index.html')">Preview
 						<b>Vaibhav Mojidra Website</b></span>
 					<textarea class="form-control" class="form-control form-control-sm" type="text"
 						placeholder="Please enter feedback or suggestions for any improvement in the over all Vaibhav Mojidra Website if any."
@@ -162,20 +231,19 @@
 				<br>
 				<fieldset>
 					<label class="my_text" style="font-size: 20px;">Rate the website <b>Vaibhav Mojidra</b></label><br>
-					<span class="fa fa-star mystar checked" onclick="Star1()" id="S1"></span>
-					<span class="fa fa-star mystar checked" onclick="Star2()" id="S2"></span>
-					<span class="fa fa-star mystar checked" onclick="Star3()" id="S3"></span>
-					<span class="fa fa-star mystar checked" onclick="Star4()" id="S4"></span>
-					<span class="fa fa-star mystar checked" onclick="Star5()" id="S5"></span>
+					<span class="fa fa-star mystar checked" onclick="Star(1)" id="S1"></span>
+					<span class="fa fa-star mystar checked" onclick="Star(2)" id="S2"></span>
+					<span class="fa fa-star mystar checked" onclick="Star(3)" id="S3"></span>
+					<span class="fa fa-star mystar checked" onclick="Star(4)" id="S4"></span>
+					<span class="fa fa-star mystar checked" onclick="Star(5)" id="S5"></span>
 				</fieldset>
-
 				<br>
 				<fieldset>
 					<button type="submit" class="btn btn-sm my_button" id="feedback-submit"
 						style="padding-left: 30px;padding-right: 30px;">Submit</button>
 				</fieldset>
 				<br>
-				<label class="my_text" style="font-size: 20px;"><i>Thank you for feedback.!!</i></label>
+				<label class="my_text" style="font-size: 20px;"><i>Appreciate your feedback.!!</i></label>
 				<br>
 				<br>
 				<br>
@@ -184,48 +252,17 @@
 	</div>
 	<script>
 		let rate = 5
-		function Star1() {
-			document.getElementById("S1").className = "fa fa-star mystar checked"
-			document.getElementById("S2").className = "fa fa-star mystar unchecked"
-			document.getElementById("S3").className = "fa fa-star mystar unchecked"
-			document.getElementById("S4").className = "fa fa-star mystar unchecked"
-			document.getElementById("S5").className = "fa fa-star mystar unchecked"
-			rate = 1
+		function Star(starValue) {
+			for (let i = 1; i <= 5; i++) {
+				if (i <= starValue) {
+					document.getElementById("S" + i).className = "fa fa-star mystar checked"
+				} else {
+					document.getElementById("S" + i).className = "fa fa-star mystar unchecked"
+				}
+			}
+			rate = starValue
 		}
-		function Star2() {
-			document.getElementById("S1").className = "fa fa-star mystar checked"
-			document.getElementById("S2").className = "fa fa-star mystar checked"
-			document.getElementById("S3").className = "fa fa-star mystar unchecked"
-			document.getElementById("S4").className = "fa fa-star mystar unchecked"
-			document.getElementById("S5").className = "fa fa-star mystar unchecked"
-			rate = 2
-		}
-		function Star3() {
-			document.getElementById("S1").className = "fa fa-star mystar checked"
-			document.getElementById("S2").className = "fa fa-star mystar checked"
-			document.getElementById("S3").className = "fa fa-star mystar checked"
-			document.getElementById("S4").className = "fa fa-star mystar unchecked"
-			document.getElementById("S5").className = "fa fa-star mystar unchecked"
-			rate = 3
-		}
-		function Star4() {
-			document.getElementById("S1").className = "fa fa-star mystar checked"
-			document.getElementById("S2").className = "fa fa-star mystar checked"
-			document.getElementById("S3").className = "fa fa-star mystar checked"
-			document.getElementById("S4").className = "fa fa-star mystar checked"
-			document.getElementById("S5").className = "fa fa-star mystar unchecked"
-			rate = 4
-		}
-		function Star5() {
-			document.getElementById("S1").className = "fa fa-star mystar checked"
-			document.getElementById("S2").className = "fa fa-star mystar checked"
-			document.getElementById("S3").className = "fa fa-star mystar checked"
-			document.getElementById("S4").className = "fa fa-star mystar checked"
-			document.getElementById("S5").className = "fa fa-star mystar checked"
-			rate = 5
-		}
-
-		function postToGoogle() {
+		$('#feedback').submit((e) => {
 			var field1 = $("#FN").val()
 			var field2 = $("#EC").val()
 			var field3 = $("#Profile").val()
@@ -235,9 +272,10 @@
 			var field7 = $("#App").val()
 			var field8 = $("#Git").val()
 			var field9 = $("#Web").val()
+			e.preventDefault()
 
 			$.ajax({
-				url: "https://docs.google.com/forms/d/e/1FAIpQLSePrhEgHmkQt9VMIAd_nSQnSNKREzPL2jmBlmYCOMq-_UONew/formResponse",
+				url: 'https://docs.google.com/forms/d/e/1FAIpQLSePrhEgHmkQt9VMIAd_nSQnSNKREzPL2jmBlmYCOMq-_UONew/formResponse',
 				data: {
 					"entry.808102757": field1,
 					"entry.154392152": field2,
@@ -250,19 +288,50 @@
 					"entry.2130691235": field9,
 					"entry.2129668705": rate
 				},
-				type: "POST",
-				dataType: "xml",
-				success: function (d) {
-					re()
-				},
-				error: function (x, y, z) {
-					console.log(x.error)
-					console.log(y)
-					console.log(z)
-					re()
+				type: 'POST',
+				dataType: "json",
+				statusCode: {
+					0: (data) => {
+
+						bs4pop.notice("Feedback submitted. Thank you!", {
+							type: 'success',
+							position: 'bottomright',
+							appendType: 'append',
+							closeBtn: 'true',
+							className: ''
+						})
+						setTimeout(() => {
+							re()
+						}, 3000);
+					},
+					200: (data) => {
+
+						bs4pop.notice("Feedback submitted. Thank you!", {
+							type: 'success',
+							position: 'bottomright',
+							appendType: 'append',
+							closeBtn: 'true',
+							className: ''
+						})
+						setTimeout(() => {
+							re()
+						}, 3000)
+					},
+					403: (data) => {
+						bs4pop.notice("Error in submitting the feedback. Please try again later.", {
+							type: 'danger',
+							position: 'bottomright',
+							appendType: 'append',
+							closeBtn: 'true',
+							className: ''
+						})
+						setTimeout(() => {
+							re()
+						}, 3000)
+					}
 				}
-			});
-		}
+			})
+		})
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>

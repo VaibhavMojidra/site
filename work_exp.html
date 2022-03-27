@@ -44,15 +44,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
     <script type="text/javascript" src="assets/js/my_script.js"></script>
+    <script type="text/javascript" src="assets/js/moment.js"></script>
     <script type="text/javascript" src="assets/js/bs4pop.js"></script>
     <script type="text/javascript" src="assets/js/apps.js"></script>
     <script type="text/javascript" src="assets/js/github_repos.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            let status = (getDarkModeStatus() === "ON" ? true : false);
-            document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png";
-            darkMode(status);
-            initNav();
+        $(document).ready(() => {
+            initNav()
+            let status = (getDarkModeStatus() === "ON" ? true : false)
+            document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png"
+            darkMode(status)
             setTimeout(() => {
                 bs4pop.notice('Tap or Click to know about the company', {
                     type: status ? 'dark' : 'primary',
@@ -61,7 +62,7 @@
                     closeBtn: 'true',
                     className: ''
                 })
-            }, 2000);
+            }, 2000)
             setTimeout(() => {
                 bs4pop.notice('<h5>Got any feedback & suggestions? <a href="feedback.html">Click Here</a></h5>', {
                     type: 'info',
@@ -71,8 +72,10 @@
                     className: '',
                     autoClose: '10000'
                 })
-            }, 20000);
-        });
+            }, 20000)
+            document.getElementById("currentProjectExp").innerHTML = "(" + calculateTime(new Date('3/30/2021'), new Date()) + ")"
+            document.getElementById("currentCompanyExp").innerHTML = "(" + calculateTime(new Date('1/18/2021'), new Date()) + ")"
+        })
     </script>
     <title>Vaibhav Mojidra</title>
     <link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
@@ -109,55 +112,52 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item active" id="darkModeLabel">
-                    <a class="nav-link">Dark Mode <img src="assets/img/nav/off.png" style="margin-left: 5px" width="41"
-                            height="20" class="d-inline-block align-center" alt="" id="darkModeSwitch"
-                            onclick="setDarkModeStatus()" /><span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
     <div style="margin-right: 20px; margin-left: 20px; margin-top: 20px;">
         <table style="margin-bottom:10px; cursor: pointer;"
-            onclick="location.href='https://www2.deloitte.com/in/en/industries/technology-media-and-telecom.html?icid=top_technology-media-and-telecom';">
+            onclick="location.href='https://www2.deloitte.com/in/en/industries/technology-media-and-telecom.html?icid=top_technology-media-and-telecom'">
             <tr>
                 <td rowspan="2"><img src="assets/img/icons/deloitte.png" style="border-radius: 5px;" width="50px"
                         height="50px"></td>
-                <td style="align-content: center;">
-                    <span class="my_text my_fade_in" style="padding-left: 15px; font-size: 1.5em;">Deloitte USI</span>
+                <td style="align-content: center">
+                    <span class="my_text my_fade_in" style="padding-left: 15px; font-size: 1.5em">Deloitte USI</span>
                 </td>
             </tr>
             <tr>
-                <td style="align-content: center;">
+                <td style="align-content: center">
                     <span class="my_text my_fade_in" style="padding-left: 15px;font-size: 1em">Jan 2021 -
-                        Present</span>
+                        Present <i id="currentCompanyExp"></i></span>
                 </td>
             </tr>
             <tr>
-                <td colspan="2" style="align-content: center;">
+                <td colspan="2" style="align-content: center">
                     <span class="my_text my_fade_in" style="padding-left: 0px;font-size: 1em">SAP Basis Administrator
                     </span>
                 </td>
             </tr>
         </table>
         <div style="display:flex">
-            <div class="my_text my_fade_in" style="background-color:var(--text_color);width: 1.5px;"></div>
-            <div class="my_text my_fade_in" style="padding-left:15px;">
-                <i style="font-size: 1.17em;">Projects</i>
-                <table style="margin-top:10px;cursor: pointer" onclick="location.href='https://about.google/';">
+            <div class="my_text my_fade_in" style="background-color:var(--text_color);width: 1.5px"></div>
+            <div class="my_text my_fade_in" style="padding-left:15px">
+                <span style="font-size: 1.17em;font-weight: 500">Projects</span>
+                <table style="margin-top:10px;cursor: pointer" onclick="location.href='https://about.google/'">
                     <tr>
-                        <td><img src="assets/img/icons/google.jpeg" style="border-radius: 5px;" width="30px"
+                        <td><img src="assets/img/icons/google.jpeg" style="border-radius: 5px" width="30px"
                                 height="30px"></td>
-                        <td style="align-content: center;">
+                        <td style="align-content: center">
                             <span class="my_text my_fade_in" style="padding-left: 7px; font-size: 1.17em">Google
                                 LLC</span>
                         </td>
                     </tr>
                 </table>
 
-                <td colspan="2" style="align-content: center;">
-                    <span class="my_text my_fade_in" style="font-size: 0.83em">Release Engineer in Google Release
-                        Management Team</span>
-
+                <div class="my_text my_fade_in" style="font-size: 0.83em;margin-top: 5px">Release Engineer in Google
+                    Release
+                    Management Team</div>
+                <div class="my_text my_fade_in" style="font-size: 0.83em"><i id="currentProjectExp"></i></div>
             </div>
         </div>
     </div>
