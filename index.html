@@ -104,7 +104,7 @@
 
 		const setImageOrVideo = story => {
 			if (story.type == "img") {
-				document.getElementById("ImageVideoConatainer").innerHTML = '<img id="StoryImage" src="assets/img/highlights/stories/' + story.src + '"/>'
+				document.getElementById("ImageVideoConatainer").innerHTML = '<img id="StoryImage" src="assets/img/highlights/stories/' + story.src + '" loading="lazy" />'
 				document.getElementById("StoryImage").style.height = "100vh"
 			} else {
 				document.getElementById("ImageVideoConatainer").innerHTML = '<video id="StoryImage" src="assets/img/highlights/stories/' + story.src + '" controls loop autoplay>This browser does not support video.</video>'
@@ -456,27 +456,27 @@
 				<div class="col-lg-6" style="padding: 8px;cursor: pointer;"
 					onclick="window.location.href = 'work_exp.html'">
 					<img src="assets/img/profile/work.gif" width="100%" height="auto" alt="Vaibhav Mojidra"
-						style="border-radius:5px;" />
+						style="border-radius:5px;" loading="lazy" />
 				</div>
 				<div class="col-lg-6" style="padding: 8px;cursor: pointer;"
 					onclick="window.location.href = 'skills.html'">
 					<img src="assets/img/profile/skills.gif" width="100%" height="auto" alt="Vaibhav Mojidra"
-						style="border-radius:5px;" />
+						style="border-radius:5px;" loading="lazy" />
 				</div>
 				<div class="col-lg-6" style="padding: 8px;cursor: pointer;"
 					onclick="window.location.href = 'apps.html'">
 					<img src="assets/img/profile/apps.gif" width="100%" height="auto" alt="Vaibhav Mojidra"
-						style="border-radius:5px;" />
+						style="border-radius:5px;" loading="lazy" />
 				</div>
 				<div class="col-lg-6" style="padding: 8px;cursor: pointer;"
 					onclick="window.location.href = 'github_repos.html'">
 					<img src="assets/img/profile/github.gif" width="100%" height="auto" alt="Vaibhav Mojidra"
-						style="border-radius:5px;" />
+						style="border-radius:5px;" loading="lazy" />
 				</div>
 				<div class="col-lg-6" style="padding: 8px;cursor: pointer;"
 					onclick="window.location.href = 'feedback.html'">
 					<img src="assets/img/profile/feedback.gif" width="100%" height="auto" alt="Vaibhav Mojidra"
-						style="border-radius:5px;" />
+						style="border-radius:5px;" loading="lazy" />
 				</div>
 			</div>
 		</div>

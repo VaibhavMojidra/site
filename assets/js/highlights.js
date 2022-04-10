@@ -1,8 +1,27 @@
 const highlights = {
+	"glocaljunction": {
+		highlightName: "Glocal Junction",
+		highlightCoverImage: "glocaljunction.jpg",
+		previousHighlightID: null,
+		nextHighlightID: "orangemint",
+		stories: [
+			{ type: "img", src: "glocaljunction/1.jpg" },
+			{ type: "img", src: "glocaljunction/2.jpg" },
+			{ type: "img", src: "glocaljunction/3.jpg" },
+			{ type: "img", src: "glocaljunction/4.jpg" },
+			{ type: "img", src: "glocaljunction/5.jpg" },
+			{ type: "img", src: "glocaljunction/6.jpg" },
+			{ type: "mp4", src: "glocaljunction/7.mp4" },
+			{ type: "mp4", src: "glocaljunction/8.mp4" },
+			{ type: "mp4", src: "glocaljunction/9.mp4" },
+			{ type: "img", src: "glocaljunction/10.jpg" },
+			{ type: "img", src: "glocaljunction/11.jpg" },
+		]
+	},
 	"orangemint": {
 		highlightName: "The Orange Mint Lounge",
 		highlightCoverImage: "orangemint.jpg",
-		previousHighlightID: null,
+		previousHighlightID: "glocaljunction",
 		nextHighlightID: "thegamepalacio",
 		stories: [
 			{ type: "img", src: "orangemint/1.jpg" },

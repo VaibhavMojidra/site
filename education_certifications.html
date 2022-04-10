@@ -94,8 +94,8 @@
 		}
 
 		const getBoilerPlate = (certificateName, instituteName, instituteIcon, courseContent) => (isMobile() ?
-			'<div onclick="showContent(' + courseContent + ')"><table style="margin-bottom: 20px;cursor: pointer;"><tr><td><img src="' + instituteIcon + '" style="margin-right: 20px; margin-left: 5px; border-radius: 5px;" width="50px" height="50px"></td><td><h4 class="my_text my_fade_in">' + certificateName + '</h4></td></tr><tr><td colspan="2"><h6 class="my_text my_fade_in">' + instituteName + '</h6></td></tr></table></div>'
-			: '<div onclick="showContent(' + courseContent + ')"><table style="margin-bottom:20px;cursor: pointer;"> <tr><td rowspan="2"><img src="' + instituteIcon + '" style="margin-right: 20px;margin-left: 5px; border-radius: 5px;" width="50px" height="50px"></td><td><h4 class="my_text my_fade_in">' + certificateName + '</h4></td></tr><tr><td><h6 class="my_text my_fade_in">' + instituteName + '</h6></td></tr></table></div>')
+			'<div onclick="showContent(' + courseContent + ')"><table style="margin-bottom: 20px;cursor: pointer;"><tr><td><img src="' + instituteIcon + '" loading="lazy" style="margin-right: 20px; margin-left: 5px; border-radius: 5px;" width="50px" height="50px"></td><td><h4 class="my_text my_fade_in">' + certificateName + '</h4></td></tr><tr><td colspan="2"><h6 class="my_text my_fade_in">' + instituteName + '</h6></td></tr></table></div>'
+			: '<div onclick="showContent(' + courseContent + ')"><table style="margin-bottom:20px;cursor: pointer;"> <tr><td rowspan="2"><img src="' + instituteIcon + '" loading="lazy" style="margin-right: 20px;margin-left: 5px; border-radius: 5px;" width="50px" height="50px"></td><td><h4 class="my_text my_fade_in">' + certificateName + '</h4></td></tr><tr><td><h6 class="my_text my_fade_in">' + instituteName + '</h6></td></tr></table></div>')
 
 
 		const initOnline = () => {

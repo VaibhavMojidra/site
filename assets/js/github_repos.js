@@ -430,6 +430,36 @@ let repos = [
 		tech: 'Android Java'
 	},
 	{
+		repoName: 'Data Structures Queue Using Linked List in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Queue-Using-Linked-List-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Queue Using Array in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Queue-Using-Array-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Stack Using Linked List in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Stack-Using-Linked-List-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Stack Using Array in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Stack-Using-Array-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Linked List in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Linked-List-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Arrays in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Arrays-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
 		repoName: 'Java Web Demo Email Password Using Ajax',
 		repoUrl: 'https://github.com/VaibhavMojidra/Java-Web---Demo-Email-Password-Using-Ajax',
 		tech: 'Java Web'
