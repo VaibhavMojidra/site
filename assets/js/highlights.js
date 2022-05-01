@@ -16,6 +16,7 @@ const highlights = {
 			{ type: "mp4", src: "glocaljunction/9.mp4" },
 			{ type: "img", src: "glocaljunction/10.jpg" },
 			{ type: "img", src: "glocaljunction/11.jpg" },
+			{ type: "mp4", src: "glocaljunction/12.mp4" },
 		]
 	},
 	"orangemint": {
