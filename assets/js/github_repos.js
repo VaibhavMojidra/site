@@ -270,8 +270,8 @@ let repos = [
 		tech: 'React Native'
 	},
 	{
-		repoName: 'IOS Swift Roll the Dice App',
-		repoUrl: 'https://github.com/VaibhavMojidra/IOS-Swift-Demo---Roll-the-Dice-App',
+		repoName: 'iOS Swift Roll the Dice App',
+		repoUrl: 'https://github.com/VaibhavMojidra/iOS-Swift-Demo---Roll-the-Dice-App',
 		tech: 'iOS Swift'
 	},
 	{
@@ -295,8 +295,8 @@ let repos = [
 		tech: 'Android Kotlin'
 	},
 	{
-		repoName: 'iOS Swift Demo I Am Rich App - First Ios Native App',
-		repoUrl: 'https://github.com/VaibhavMojidra/iOS-Swift-Demo---I-Am-Rich-App-First-Ios-Native-App',
+		repoName: 'iOS Swift Demo I Am Rich App - First iOS Native App',
+		repoUrl: 'https://github.com/VaibhavMojidra/iOS-Swift-Demo---I-Am-Rich-App-First-iOS-Native-App',
 		tech: 'iOS Swift'
 	},
 	{
@@ -362,7 +362,7 @@ let repos = [
 	{
 		repoName: 'Demos Javascript Basics For Starting React',
 		repoUrl: 'https://github.com/VaibhavMojidra/Demos---Javascript-basics-for-starting-react',
-		tech: 'JavaScript ES6'
+		tech: 'Javascript es6'
 	},
 	{
 		repoName: 'Express JS Demo exploring Middleware',
@@ -430,6 +430,16 @@ let repos = [
 		tech: 'Android Java'
 	},
 	{
+		repoName: 'Data Structures Binary Tree in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Binary-Tree-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Data Structures Hashtable Using Array And Linked List in Java',
+		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Hashtable-Using-Array-And-Linked-List-in-Java',
+		tech: 'Java Data Structures & Algorithms'
+	},
+	{
 		repoName: 'Data Structures Queue Using Linked List in Java',
 		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Queue-Using-Linked-List-in-Java',
 		tech: 'Java Data Structures & Algorithms'
@@ -458,6 +468,11 @@ let repos = [
 		repoName: 'Data Structures Arrays in Java',
 		repoUrl: 'https://github.com/VaibhavMojidra/Data-Structures---Arrays-in-Java',
 		tech: 'Java Data Structures & Algorithms'
+	},
+	{
+		repoName: 'Java Console Sample Data Set Generator',
+		repoUrl: 'https://github.com/VaibhavMojidra/Java-Console-Sample-Data-Set-Generator',
+		tech: 'Others'
 	},
 	{
 		repoName: 'Java Web Demo Email Password Using Ajax',

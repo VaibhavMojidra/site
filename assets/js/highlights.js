@@ -1,8 +1,98 @@
 const highlights = {
+	"90ftabove": {
+		highlightName: "90 ft Above",
+		highlightCoverImage: "90ftabove.jpg",
+		previousHighlightID: null,
+		nextHighlightID: "deloitteusi",
+		stories: [
+			{ type: "img", src: "90ftabove/1.jpg" },
+			{ type: "img", src: "90ftabove/2.jpg" },
+			{ type: "img", src: "90ftabove/3.jpg" },
+			{ type: "img", src: "90ftabove/4.jpg" },
+			{ type: "img", src: "90ftabove/5.jpg" },
+			{ type: "img", src: "90ftabove/6.jpg" },
+			{ type: "img", src: "90ftabove/7.jpg" },
+		]
+	},
+	"deloitteusi": {
+		highlightName: "Deloitte USI",
+		highlightCoverImage: "deloitteusi.jpg",
+		previousHighlightID: "90ftabove",
+		nextHighlightID: "nationalpark",
+		stories: [
+			{ type: "img", src: "deloitteusi/1.jpg" },
+			{ type: "img", src: "deloitteusi/2.jpg" },
+			{ type: "img", src: "deloitteusi/3.jpg" },
+			{ type: "img", src: "deloitteusi/4.jpg" },
+			{ type: "img", src: "deloitteusi/5.jpg" },
+			{ type: "img", src: "deloitteusi/6.jpg" },
+			{ type: "video", src: "deloitteusi/7.mp4" },
+			{ type: "video", src: "deloitteusi/8.mp4" },
+			{ type: "img", src: "deloitteusi/9.jpg" },
+			{ type: "img", src: "deloitteusi/10.jpg" },
+		]
+	},
+	"nationalpark": {
+		highlightName: "Sanjay Gandhi National Park",
+		highlightCoverImage: "nationalpark.jpg",
+		previousHighlightID: "deloitteusi",
+		nextHighlightID: "westinpowailake",
+		stories: [
+			{ type: "img", src: "nationalpark/1.jpg" },
+			{ type: "img", src: "nationalpark/2.jpg" },
+			{ type: "img", src: "nationalpark/3.jpg" },
+			{ type: "img", src: "nationalpark/4.jpg" },
+			{ type: "img", src: "nationalpark/5.jpg" },
+			{ type: "video", src: "nationalpark/6.mp4" },
+			{ type: "video", src: "nationalpark/7.mp4" },
+			{ type: "video", src: "nationalpark/8.mp4" },
+			{ type: "img", src: "nationalpark/9.jpg" },
+			{ type: "video", src: "nationalpark/10.mp4" },
+			{ type: "video", src: "nationalpark/11.mp4" },
+			{ type: "img", src: "nationalpark/12.jpg" },
+		]
+	},
+	"westinpowailake": {
+		highlightName: "The Westin Mumbai Powai Lake",
+		highlightCoverImage: "westinpowailake.jpg",
+		previousHighlightID: "nationalpark",
+		nextHighlightID: "pizzario",
+		stories: [
+			{ type: "img", src: "westinpowailake/1.jpg" },
+			{ type: "img", src: "westinpowailake/2.jpg" },
+			{ type: "img", src: "westinpowailake/3.jpg" },
+			{ type: "video", src: "westinpowailake/4.mp4" },
+			{ type: "img", src: "westinpowailake/5.jpg" },
+			{ type: "img", src: "westinpowailake/6.jpg" }
+		]
+	},
+	"pizzario": {
+		highlightName: "Pizzario",
+		highlightCoverImage: "pizzario.jpg",
+		previousHighlightID: "westinpowailake",
+		nextHighlightID: "starbucks",
+		stories: [
+			{ type: "img", src: "pizzario/1.jpg" },
+			{ type: "img", src: "pizzario/2.jpg" },
+			{ type: "img", src: "pizzario/3.jpg" },
+			{ type: "img", src: "pizzario/4.jpg" },
+		]
+	},
+	"starbucks": {
+		highlightName: "Starbucks",
+		highlightCoverImage: "starbucks.jpg",
+		previousHighlightID: "pizzario",
+		nextHighlightID: "glocaljunction",
+		stories: [
+			{ type: "img", src: "starbucks/1.jpg" },
+			{ type: "img", src: "starbucks/2.jpg" },
+			{ type: "img", src: "starbucks/3.jpg" },
+		]
+	},
 	"glocaljunction": {
 		highlightName: "Glocal Junction",
 		highlightCoverImage: "glocaljunction.jpg",
-		previousHighlightID: null,
+		previousHighlightID: "starbucks",
 		nextHighlightID: "orangemint",
 		stories: [
 			{ type: "img", src: "glocaljunction/1.jpg" },
