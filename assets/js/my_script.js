@@ -2,7 +2,7 @@ const darkMode = (isDarkModeOn) => {
 	let r = document.querySelector(':root')
 	if (isDarkModeOn) {
 		r.style.setProperty('--nav_bg', '#000000')
-		r.style.setProperty('--page_bg', '#141414')
+		r.style.setProperty('--page_bg', '#121212')
 		r.style.setProperty('--text_color', '#FDFDFD')
 		r.style.setProperty('--card_bg', '#262626')
 		r.style.setProperty('--button_color', '#f5f5f5')
