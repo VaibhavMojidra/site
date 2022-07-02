@@ -82,8 +82,8 @@
 			document.getElementById("StoryTable").style.width = (counter * 95) + "px"
 			document.getElementById('StoryTable').innerHTML = highlightsHTMLText
 			if (!isMobile()) {
-				document.getElementById("highlightContainer").style.marginLeft = "15vw"
-				document.getElementById("highlightContainer").style.marginRight = "15vw"
+				document.getElementById("nextImageBtn").style.marginRight = "10px"
+				document.getElementById("prevImageBtn").style.marginLeft = "10px"
 			}
 		}
 
@@ -237,7 +237,7 @@
 		#outerStoryRing {
 			height: 65px;
 			width: 65px;
-			background-color: #F44336;
+			background-color: #36d8f4;
 			background: linear-gradient(45deg, #ef3357, #ef553a, #ef9a33, #efcc33, #ebee33, #b0ef34, #4eef3d, #33ef83, #33e9da, #67B3DA, #9C7CDA, #D046DA, #DA40AE, #E03D99, #E53983, #EA366D);
 			border-radius: 100px;
 			padding: 3px;
@@ -309,14 +309,23 @@
 	<div id="ImageDiv">
 
 		<span
-			style="font-size: 20px;right:0;margin-right:15px;margin-top:15px;position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000"
-			class="my_text" onclick="closeImageDiv()">╳</span>
+			style="right:0;margin-right:10px;margin-top:10px;position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000"
+			class="my_text" onclick="closeImageDiv()">
+			<img src="assets/img/highlights/icons/light/close.png" id="closeImageBtn"
+				style="width: 25px;height: 25px;" />
+		</span>
 		<span id="nextBtn"
-			style="padding-top: 60px;padding-bottom: 60px;padding-left: 60px; font-size: 30px;right:0;margin-right:5px;top: calc(50% - 80px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
-			class="my_text" onclick="next()">〉</span>
+			style="padding-top: 60px;padding-bottom: 60px;padding-left: 60px;right:0;margin-right:5px;top: calc(50% - 85px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
+			class="my_text" onclick="next()">
+			<img src="assets/img/highlights/icons/light/next.png" id="nextImageBtn"
+				style="width: 25px;height: 25px;margin-right: 5px;" />
+		</span>
 		<span id="previousBtn"
-			style="padding-top: 60px;padding-bottom: 60px;padding-right: 60px;font-size: 30px;left:0;margin-left:5px;top: calc(50% - 80px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
-			class="my_text" onclick="previous()">〈</span>
+			style="padding-top: 60px;padding-bottom: 60px;padding-right: 60px;font-size: 30px;left:0;margin-left:5px;top: calc(50% - 85px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
+			class="my_text" onclick="previous()">
+			<img src="assets/img/highlights/icons/light/prev.png" id="prevImageBtn"
+				style="width: 25px;height: 25px;margin-left: 5px;" />
+		</span>
 		<div id="ImageVideoConatainer"></div>
 		<span id="HighlightTitle" style="transition: 3s;opacity:0;font-size: 20px;bottom:70px;position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;left: 0%;right: 0%;
 			text-align: center;color:white;display: block"></span>
@@ -438,12 +447,15 @@
 			</div>
 		</div>
 		<br>
-		<div class="row my_fade_in"
-			style="overflow: auto;margin-left:6vw ;margin-right: 6vw; padding-bottom: 5px;margin-top:10px"
-			id="highlightContainer">
-			<table id="StoryTable">
+		<div class="container">
 
-			</table>
+			<div class="row my_fade_in"
+				style="overflow: auto;margin-left:0px ;margin-right: 0px; padding-bottom: 5px;margin-top:10px"
+				id="highlightContainer">
+				<table id="StoryTable">
+
+				</table>
+			</div>
 		</div>
 		<br>
 		<div class="container" style="margin-top:10px">

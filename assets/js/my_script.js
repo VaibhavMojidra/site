@@ -22,6 +22,12 @@ const darkMode = (isDarkModeOn) => {
 			document.getElementById("mail").src = "assets/img/socials/dark/mail.png"
 			document.getElementById("stackoverflow").src = "assets/img/socials/dark/stackoverflow.png"
 		} catch (e) { }
+		try {
+			document.getElementById("closeImageBtn").src = "assets/img/highlights/icons/dark/close.png"
+			document.getElementById("prevImageBtn").src = "assets/img/highlights/icons/dark/prev.png"
+			document.getElementById("nextImageBtn").src = "assets/img/highlights/icons/dark/next.png"
+		}
+		catch (e) { }
 	} else {
 		r.style.setProperty('--nav_bg', '#4a148c')
 		r.style.setProperty('--page_bg', '#FDFDFD')
@@ -44,6 +50,12 @@ const darkMode = (isDarkModeOn) => {
 			document.getElementById("mail").src = "assets/img/socials/light/mail.png"
 			document.getElementById("stackoverflow").src = "assets/img/socials/light/stackoverflow.png"
 		} catch (e) { }
+		try {
+			document.getElementById("closeImageBtn").src = "assets/img/highlights/icons/light/close.png"
+			document.getElementById("prevImageBtn").src = "assets/img/highlights/icons/light/prev.png"
+			document.getElementById("nextImageBtn").src = "assets/img/highlights/icons/light/next.png"
+		}
+		catch (e) { }
 	}
 }
 

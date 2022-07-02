@@ -7,6 +7,42 @@
   --button_text_color: #FDFDFD;
 }
 
+body {
+  overflow-y: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray;
+  border-radius: 200px;
+  margin-top: 60px;
+  margin-bottom: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#d1b8ef, #8ebff5);
+  border-radius: 200px;
+}
+
+#highlightContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--page_bg);
+  border-radius: 200px;
+}
+
+#highlightContainer::-webkit-scrollbar-thumb {
+  background: var(--page_bg);
+  border-radius: 200px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#8ebff5, #d1b8ef);
+}
+
+
 .nav_bar_background {
   background-color: var(--nav_bg);
 }

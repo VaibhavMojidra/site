@@ -3,7 +3,7 @@ const highlights = {
 		highlightName: "JW Marriott - Lotus Cafe",
 		highlightCoverImage: "jwmarriottlotuscafe.jpeg",
 		previousHighlightID: null,
-		nextHighlightID: "90ftabove",
+		nextHighlightID: "teapost",
 		stories: [
 			{ type: "img", src: "jwmarriottlotuscafe/1.jpeg" },
 			{ type: "img", src: "jwmarriottlotuscafe/2.jpeg" },
@@ -19,12 +19,25 @@ const highlights = {
 			{ type: "video", src: "jwmarriottlotuscafe/12.mp4" },
 			{ type: "img", src: "jwmarriottlotuscafe/13.jpeg" },
 			{ type: "img", src: "jwmarriottlotuscafe/14.jpeg" },
+			{ type: "video", src: "jwmarriottlotuscafe/15.mp4" }
+		]
+	},
+	"teapost": {
+		highlightName: "Tea Post Cafe",
+		highlightCoverImage: "teapost.jpeg",
+		previousHighlightID: "jwmarriottlotuscafe",
+		nextHighlightID: "90ftabove",
+		stories: [
+			{ type: "img", src: "teapost/1.jpeg" },
+			{ type: "img", src: "teapost/2.jpeg" },
+			{ type: "img", src: "teapost/3.jpeg" },
+			{ type: "img", src: "teapost/4.jpeg" },
 		]
 	},
 	"90ftabove": {
 		highlightName: "90 ft Above",
 		highlightCoverImage: "90ftabove.jpg",
-		previousHighlightID: "jwmarriottlotuscafe",
+		previousHighlightID: "teapost",
 		nextHighlightID: "deloitteusi",
 		stories: [
 			{ type: "img", src: "90ftabove/1.jpg" },
