@@ -38,6 +38,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
 	<script type="text/javascript" src="assets/js/my_script.js"></script>
@@ -67,7 +71,16 @@
 				}, 5000)
 			}
 			initializeHighlights()
+
+			window.addEventListener("orientationchange", function () {
+				setTimeout(() => {
+					initializeHighlights()
+				}, 1000);
+			}, false);
+
 		})
+
+		$.mobile.loading().hide()
 
 		const initializeHighlights = () => {
 			let ringsHTMLText = ""
@@ -110,7 +123,7 @@
 				document.getElementById("ImageVideoConatainer").innerHTML = '<video id="StoryImage" src="assets/img/highlights/stories/' + story.src + '" controls loop autoplay>This browser does not support video.</video>'
 			}
 			if (isMobile()) {
-				if (screen.height < screen.width) {
+				if (!isPortrait()) {
 					document.getElementById("StoryImage").style.height = "100vh"
 					document.getElementById("HighlightTitle").style.fontSize = "12px"
 				} else {
@@ -220,6 +233,25 @@
 				highlighttitleObj.style.display = "none"
 			}
 		}
+		if (isMobile()) {
+			$(document).on("pagecreate", "#pageone", () => {
+				$("#ImageVideoConatainer").on("swiperight", () => {
+					if (currentHighlightObj.previousHighlightID == null && storyCounter <= 0) {
+						document.getElementById("previousBtn").style.display = "none"
+					} else {
+						previous()
+					}
+
+				})
+				$("#ImageVideoConatainer").on("swipeleft", () => {
+					if (currentHighlightObj.nextHighlightID == null && storyCounter >= (currentHighlightObj.stories.length - 1)) {
+						document.getElementById("nextBtn").style.display = "none"
+					} else {
+						next()
+					}
+				})
+			})
+		}
 	</script>
 	<style>
 		.wrapper {
@@ -309,7 +341,7 @@
 	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
 </head>
 
-<body class="page_background">
+<body class="page_background" data-role="page" id="pageone">
 
 	<div id="ImageDiv">
 
@@ -349,23 +381,30 @@
 					<a class="nav-link">Profile</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="education_certifications.html">Education & Certifications</a>
+					<a class="nav-link" onclick="window.location.href = 'education_certifications.html'"
+						style="cursor: pointer;">Education &
+						Certifications</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="work_exp.html">Work Experience</a>
+					<a class="nav-link" onclick="window.location.href = 'work_exp.html'" style="cursor: pointer;">Work
+						Experience</a>
 				</li>
 				<li class=" nav-item">
-					<a class="nav-link" href="skills.html">Skills</a>
+					<a class="nav-link" onclick="window.location.href = 'skills.html'"
+						style="cursor: pointer;">Skills</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="apps" href="apps.html">Apps</a>
+					<a class="nav-link" id="apps" onclick="window.location.href = 'apps.html'"
+						style="cursor: pointer;">Apps</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="github_repo" href="github_repos.html">GitHub Repositories</a>
+					<a class="nav-link" id="github_repo" onclick="window.location.href = 'github_repos.html'"
+						style="cursor: pointer;">GitHub
+						Repositories</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item active" id="darkModeLabel">
+				<li class="nav-item active" id="darkModeLabel" style="cursor: pointer;">
 				</li>
 			</ul>
 		</div>

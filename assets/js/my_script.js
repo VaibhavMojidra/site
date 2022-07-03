@@ -117,6 +117,26 @@ const re = () => {
 	window.location.reload()
 }
 
+const isPortrait = () => {
+	switch (window.orientation) {
+		case 0:
+			return true;
+			break;
+		case 90:
+			return false;
+			break;
+		case -90:
+			return false;
+			break;
+		case 180:
+			return true;
+			break;
+		default:
+			return false;
+			break;
+	}
+}
+
 const calculateTime = (startDate, endDate) => {
 	let startingDate = moment(startDate)
 	let endingDate = moment(endDate)

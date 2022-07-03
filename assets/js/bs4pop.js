@@ -367,8 +367,7 @@
 		`);
 
 		if (opts.autoClose) {
-			$el
-				.append(`
+			$el.append(`
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -378,7 +377,9 @@
 		if (opts.autoClose) {
 
 			let t = setTimeout(() => {
-				$el.alert('close');
+				try {
+					$el.alert('close');
+				} catch (e) { }
 			}, opts.autoClose);
 
 		}
