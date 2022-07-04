@@ -1,8 +1,26 @@
 const highlights = {
+	"pinkwasabi": {
+		highlightName: "Pink Wasabi",
+		highlightCoverImage: "pinkwasabi.jpeg",
+		previousHighlightID: null,
+		nextHighlightID: "jwmarriottlotuscafe",
+		stories: [
+			{ type: "img", src: "pinkwasabi/1.jpeg" },
+			{ type: "img", src: "pinkwasabi/2.jpeg" },
+			{ type: "img", src: "pinkwasabi/3.jpeg" },
+			{ type: "img", src: "pinkwasabi/4.jpeg" },
+			{ type: "img", src: "pinkwasabi/5.jpeg" },
+			{ type: "img", src: "pinkwasabi/6.jpeg" },
+			{ type: "video", src: "pinkwasabi/7.mp4" },
+			{ type: "img", src: "pinkwasabi/8.jpeg" },
+			{ type: "video", src: "pinkwasabi/9.mp4" },
+			{ type: "img", src: "pinkwasabi/10.jpeg" },
+		]
+	},
 	"jwmarriottlotuscafe": {
 		highlightName: "JW Marriott - Lotus Cafe",
 		highlightCoverImage: "jwmarriottlotuscafe.jpeg",
-		previousHighlightID: null,
+		previousHighlightID: "pinkwasabi",
 		nextHighlightID: "teapost",
 		stories: [
 			{ type: "img", src: "jwmarriottlotuscafe/1.jpeg" },
