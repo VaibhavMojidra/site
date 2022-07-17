@@ -5,6 +5,9 @@
   --card_bg: #f5f5f5;
   --button_color: #4a148c;
   --button_text_color: #FDFDFD;
+  --dim_rev_page_bg: #1F1A24;
+  --dim_rev_text_color: #ECEFF1;
+  --translucent_page_bg: #FDFDFD1A;
 }
 
 body {

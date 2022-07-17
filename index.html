@@ -29,6 +29,9 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
@@ -38,7 +41,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -104,8 +106,10 @@
 		let storyCounter = 0
 		let currentHighlightObj = null
 		let hightlightTimeout = null
+		let currentHightlightLocation = null
 		const openHighlight = highlightId => {
 			currentHighlightObj = highlights[highlightId]
+			validateLocationVisibilty(true)
 			showHighlightTitle(currentHighlightObj.highlightName, true)
 			hightlightTimeout = setTimeout(() => {
 				showHighlightTitle("", false)
@@ -115,6 +119,19 @@
 			setImageOrVideo(currentHighlightObj.stories[storyCounter])
 		}
 
+		const validateLocationVisibilty = isFirstTimeLoad => {
+			currentHightlightLocation = currentHighlightObj.location
+			document.getElementById("locationBtn").style.visibility = "hidden"
+			if (currentHightlightLocation != null) {
+				let delayTime = isFirstTimeLoad ? 0 : 500;
+				setTimeout(() => {
+					document.getElementById("locationBtn").style.visibility = "visible"
+					document.getElementById("locationText").innerHTML = currentHightlightLocation.locationText
+				}, delayTime);
+				return
+			}
+			document.getElementById("locationBtn").style.visibility = "hidden"
+		}
 		const setImageOrVideo = story => {
 			if (story.type == "img") {
 				document.getElementById("ImageVideoConatainer").innerHTML = '<img id="StoryImage" src="assets/img/highlights/stories/' + story.src + '" loading="lazy" />'
@@ -172,6 +189,7 @@
 				showHighlightTitle("", false)
 				clearTimeout(hightlightTimeout)
 				nextHighlightAnim()
+				validateLocationVisibilty(false)
 				showHighlightTitle(currentHighlightObj.highlightName, true)
 				hightlightTimeout = setTimeout(() => {
 					showHighlightTitle("", false)
@@ -189,6 +207,7 @@
 				showHighlightTitle("", false)
 				clearTimeout(hightlightTimeout)
 				prevHighlightAnim()
+				validateLocationVisibilty(false)
 			}
 			setImageOrVideo(currentHighlightObj.stories[storyCounter])
 		}
@@ -241,7 +260,6 @@
 					} else {
 						previous()
 					}
-
 				})
 				$("#ImageVideoConatainer").on("swipeleft", () => {
 					if (currentHighlightObj.nextHighlightID == null && storyCounter >= (currentHighlightObj.stories.length - 1)) {
@@ -250,7 +268,36 @@
 						next()
 					}
 				})
+				$("#ImageVideoConatainer").on("swipedown", closeImageDiv)
 			})
+		}
+
+		const showLocationOnMap = () => {
+			document.getElementById('locationDialog').style.visibility = "visible"
+			document.getElementById('locationInnerDialog').style.height = "90vh"
+			document.getElementById('locationInnerDialog').style.width = "90vw"
+			document.getElementById('locationInnerDialog').style.marginLeft = "5vw"
+			document.getElementById('locationInnerDialog').style.marginTop = "5vh"
+			setTimeout(() => {
+				document.getElementById('locationMap').src = currentHightlightLocation.locationLink
+				const collection = document.getElementsByClassName("locationDialogButton")
+				collection[0].style.visibility = "visible"
+				collection[1].style.visibility = "visible"
+				collection[2].style.visibility = "visible"
+			}, 800);
+		}
+		const closeLocationOnMap = () => {
+			document.getElementById('locationDialog').style.visibility = "visible"
+			document.getElementById('locationInnerDialog').style.height = "0vh"
+			document.getElementById('locationInnerDialog').style.width = "0vw"
+			document.getElementById('locationInnerDialog').style.marginLeft = "50vw"
+			document.getElementById('locationInnerDialog').style.marginTop = "50vh"
+			document.getElementById('locationMap').src = 'about:blank'
+			document.getElementById('locationDialog').style.visibility = "hidden"
+			const collection = document.getElementsByClassName("locationDialogButton")
+			collection[0].style.visibility = "hidden"
+			collection[1].style.visibility = "hidden"
+			collection[2].style.visibility = "hidden"
 		}
 	</script>
 	<style>
@@ -336,32 +383,78 @@
 			transition: 0.3s;
 			text-align: center
 		}
+
+		.locationDialogButton {
+			-webkit-box-shadow: 0px 0px 2px 0px rgba(155, 155, 155, 0.75);
+			-moz-box-shadow: 0px 0px 2px 0px rgb(172, 172, 172, 0.75);
+			box-shadow: 0px 0px 2px 0px rgb(172, 172, 172, 0.75);
+			height: 38px;
+			width: 38px;
+			margin-top: 15px;
+			border-radius: 100px;
+			visibility: hidden;
+		}
+
+		/* body {} */
 	</style>
 	<title>Vaibhav Mojidra</title>
 	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
 </head>
 
-<body class="page_background" data-role="page" id="pageone">
-
+<body class="page_background" data-role="page" id="pageone" onbeforeunload="closeLocationOnMap()">
 	<div id="ImageDiv">
 
-		<span
-			style="right:0;margin-right:10px;margin-top:10px;position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000"
-			class="my_text" onclick="closeImageDiv()">
+		<div style="background-color: #121212DE;position: absolute;z-index: 4000;height: 100vh;width: 100vw;visibility: hidden;"
+			id="locationDialog">
+			<div id="locationInnerDialog" style="height: 0vh;width: 0vw;margin-top: 50vh;margin-left: 50vw;border-radius: 10px;-webkit-box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);
+				-moz-box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);
+				box-shadow: 0px 0px 2px 0px rgba(112,112,112,1);transition: 1s;">
+				<iframe id="locationMap"
+					style="height: calc(100% - 68px);width: 90vw;display:block;border-top-right-radius: 10px;;border-top-left-radius: 10px;transition: 1s;"
+					allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameBorder="0"
+					src="about:blank">
+
+				</iframe>
+				<div style="transition: 1s;background-color: var(--translucent_page_bg);height: 68px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"
+					id="locationBottomDiv">
+					<button class="btn my_button locationDialogButton"
+						onclick="window.location.href = currentHightlightLocation.locationDetailsLink"
+						style="font-size: 22px;padding: 0;"><i class="fa fa-street-view"></i></button>
+					<button class="btn my_button locationDialogButton"
+						onclick="window.location.href = currentHightlightLocation.locationGoogleEarthLink"
+						style="font-size: 24px;padding: 0;margin-left: 14px;"><i
+							class="fa fa-earth-americas"></i></button>
+					<button class="btn my_button locationDialogButton" onclick="closeLocationOnMap()"
+						style="font-size: 24px;padding: 0;margin-left: 14px;"><i class="fa fa-xmark"></i></button>
+				</div>
+			</div>
+		</div>
+
+		<span id="locationBtn"
+			style="left:0;margin-left:10px;margin-top:12px;position: absolute;z-index: 3000; cursor: pointer;
+		background-color:var(--dim_rev_page_bg);padding-top: 2px;padding-bottom: 2px;padding-left: 4px;padding-right: 8px;
+		border-radius: 100px;max-width: 60vw;text-overflow: ellipsis;white-space: nowrap;font-size: 13px;overflow: hidden;color: var(--dim_rev_text_color);"
+			onclick="showLocationOnMap()">
+			<img src="assets/img/highlights/icons/common/location.png" style="width: 18px;height: 18px;" />
+			<span id="locationText"> Café - JW Marriott Mumbai Sahar</span>
+		</span>
+
+		<span style="right:0;margin-right:10px;margin-top:10px;position: absolute;z-index: 3000; cursor: pointer;"
+			onclick="closeImageDiv()">
 			<img src="assets/img/highlights/icons/light/close.png" id="closeImageBtn"
-				style="width: 25px;height: 25px;" />
+				style="width: 22px;height: 22px;" />
 		</span>
 		<span id="nextBtn"
-			style="padding-top: 60px;padding-bottom: 60px;padding-left: 60px;right:0;margin-right:5px;top: calc(50% - 85px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
+			style="padding-top: 60px;padding-bottom: 60px;padding-left: 60px;right:0;margin-right:5px;top: calc(50% - 71px);position: absolute;z-index: 3000; cursor: pointer;display: block"
 			class="my_text" onclick="next()">
 			<img src="assets/img/highlights/icons/light/next.png" id="nextImageBtn"
-				style="width: 25px;height: 25px;margin-right: 5px;" />
+				style="width: 22px;height: 22px;margin-right: 5px;" />
 		</span>
 		<span id="previousBtn"
-			style="padding-top: 60px;padding-bottom: 60px;padding-right: 60px;font-size: 30px;left:0;margin-left:5px;top: calc(50% - 85px);position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;display: block"
+			style="padding-top: 60px;padding-bottom: 60px;padding-right: 60px;font-size: 30px;left:0;margin-left:5px;top: calc(50% - 71px);position: absolute;z-index: 3000; cursor: pointer;display: block"
 			class="my_text" onclick="previous()">
 			<img src="assets/img/highlights/icons/light/prev.png" id="prevImageBtn"
-				style="width: 25px;height: 25px;margin-left: 5px;" />
+				style="width: 22px;height: 22px;margin-left: 5px;" />
 		</span>
 		<div id="ImageVideoConatainer"></div>
 		<span id="HighlightTitle" style="transition: 3s;opacity:0;font-size: 20px;bottom:70px;position: absolute;z-index: 3000; cursor: pointer;text-shadow: 0 0 3px #000000;left: 0%;right: 0%;

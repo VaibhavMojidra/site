@@ -7,6 +7,9 @@ const darkMode = (isDarkModeOn) => {
 		r.style.setProperty('--card_bg', '#262626')
 		r.style.setProperty('--button_color', '#f5f5f5')
 		r.style.setProperty('--button_text_color', '#333333')
+		r.style.setProperty('--dim_rev_page_bg', '#ECEFF1')
+		r.style.setProperty('--dim_rev_text_color', '#1F1A24')
+		r.style.setProperty('--translucent_page_bg', '#1212124D')
 		try {
 			document.getElementById("modeInfoText").innerHTML = "Switch to light mode"
 		} catch (e) { }
@@ -35,6 +38,9 @@ const darkMode = (isDarkModeOn) => {
 		r.style.setProperty('--card_bg', '#f5f5f5')
 		r.style.setProperty('--button_color', '#4a148c')
 		r.style.setProperty('--button_text_color', '#FDFDFD')
+		r.style.setProperty('--dim_rev_page_bg', '#1F1A24')
+		r.style.setProperty('--dim_rev_text_color', '#ECEFF1')
+		r.style.setProperty('--translucent_page_bg', '#FDFDFD1A')
 		try {
 			document.getElementById("modeInfoText").innerHTML = "Switch to dark mode"
 		} catch (e) { }
