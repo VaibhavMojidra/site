@@ -274,12 +274,19 @@
 
 		const showLocationOnMap = () => {
 			document.getElementById('locationDialog').style.visibility = "visible"
-			document.getElementById('locationInnerDialog').style.height = "90vh"
+			if (isSafari() && isMobile()) {
+				document.getElementById('locationInnerDialog').style.height = "80vh"
+				document.getElementById('locationInnerDialog').style.marginTop = "10vh"
+				document.getElementById('locationInnerDialog').style.marginBottom = "10vh"
+
+			} else {
+				document.getElementById('locationInnerDialog').style.height = "90vh"
+				document.getElementById('locationInnerDialog').style.marginTop = "5vh"
+				document.getElementById('locationInnerDialog').style.marginBottom = "5vh"
+			}
 			document.getElementById('locationInnerDialog').style.width = "90vw"
 			document.getElementById('locationInnerDialog').style.marginLeft = "5vw"
 			document.getElementById('locationInnerDialog').style.marginRight = "5vw"
-			document.getElementById('locationInnerDialog').style.marginTop = "5vh"
-			document.getElementById('locationInnerDialog').style.marginBottom = "5vh"
 			setTimeout(() => {
 				document.getElementById('locationMap').src = currentHightlightLocation.locationLink
 				const collection = document.getElementsByClassName("locationDialogButton")
