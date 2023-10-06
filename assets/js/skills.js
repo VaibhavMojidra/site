@@ -34,7 +34,9 @@ let skills = [
     { title: "Android Jetpack's Navigation", description: "Android Jetpack's Navigation component helps you implement navigation, from simple button clicks to more complex patterns, such as app bars and the navigation drawer." },
     { title: "Electron JS", description: "Electron JS is a framework for building desktop applications using JavaScript, HTML, and CSS. By embedding Chromium and Node.js into its binary, Electron allows you to maintain one JavaScript codebase and create cross-platform apps that work on Windows, macOS, and Linux." },
     { title: "Hilt", description: "Hilt is a dependency injection framework for Android apps developed by Google, built on top of Dagger, simplifies the process of managing dependencies in your Android projects by providing a set of annotations and integration with the Android framework." },
-    { title: "Android Jetpack Compose", description: "Android Jetpack Compose is a modern UI toolkit for building native Android apps. It allows you to create user interfaces using a declarative approach, simplifying UI development and making it more efficient." }
+    { title: "Android Jetpack Compose", description: "Android Jetpack Compose is a modern UI toolkit for building native Android apps. It allows you to create user interfaces using a declarative approach, simplifying UI development and making it more efficient." },
+    { title: "SAP UI5", description: "SAPUI5, is a JavaScript-based open-source user interface (UI) development toolkit developed and maintained by SAP." },
+    { title: "SAP BTP", description: "SAP BTP (SAP Business Technology Platform) is a comprehensive cloud-based platform offered by SAP that provides a range of services and tools for building, extending, and integrating SAP applications." }
 ]
 let handsOns = [
     "Developing Android Apps using Java as well as Kotlin.",
