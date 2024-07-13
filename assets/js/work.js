@@ -8,12 +8,20 @@ let work = [
         companyLeavingDate: 'Present',
         projects: [
             {
+                client: "AARP",
+                clientLogo: "aarp.jpg",
+                clientWebsite: 'https://www.aarp.org/',
+                projectRoleDesc: 'Android Developer',
+                projectJoiningDate: '1/2/2024',
+                projectEndDate: 'Present'
+            },
+            {
                 client: "Google LLC",
                 clientLogo: "google.jpeg",
                 clientWebsite: 'https://about.google/',
-                projectRoleDesc: '',
+                projectRoleDesc: 'SAP UI5 Developer',
                 projectJoiningDate: '3/30/2021',
-                projectEndDate: 'Present'
+                projectEndDate: '12/31/2023'
             }
         ]
     }
