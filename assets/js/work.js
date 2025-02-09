@@ -12,7 +12,7 @@ let work = [
                 clientLogo: "aarp.jpg",
                 clientWebsite: 'https://www.aarp.org/',
                 projectRoleDesc: 'Android Developer',
-                projectJoiningDate: '2/14/2022',
+                projectJoiningDate: '3/14/2022',
                 projectEndDate: 'Present'
             },
             {
@@ -21,7 +21,7 @@ let work = [
                 clientWebsite: 'https://about.google/',
                 projectRoleDesc: 'SAP UI5 Developer',
                 projectJoiningDate: '3/30/2021',
-                projectEndDate: '2/11/2022'
+                projectEndDate: '3/11/2022'
             }
         ]
     }
