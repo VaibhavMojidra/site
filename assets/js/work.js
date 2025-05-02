@@ -2,7 +2,7 @@ let work = [
     {
         companyName: "Deloitte USI (US Office of India)",
         companyLogo: "deloitte.jpeg",
-        role: '',
+        role: 'Android Developer',
         companyOfficialWebsite: 'https://www2.deloitte.com/ui/en.html',
         companyJoiningDate: '1/18/2021',
         companyLeavingDate: 'Present',
@@ -12,7 +12,7 @@ let work = [
                 clientLogo: "aarp.jpg",
                 clientWebsite: 'https://www.aarp.org/',
                 projectRoleDesc: 'Android Developer',
-                projectJoiningDate: '1/2/2024',
+                projectJoiningDate: '10/1/2022',
                 projectEndDate: 'Present'
             },
             {
@@ -21,7 +21,7 @@ let work = [
                 clientWebsite: 'https://about.google/',
                 projectRoleDesc: 'SAP UI5 Developer',
                 projectJoiningDate: '3/30/2021',
-                projectEndDate: '12/31/2023'
+                projectEndDate: '9/30/2022'
             }
         ]
     }
@@ -29,9 +29,14 @@ let work = [
 
 let awards = [
     {
+        awardname: 'Spot Award',
+        awardDate: '07/09/2024',
+        awardNote: 'Received from Deloitte USI while working for AARP'
+    },
+    {
         awardname: 'Applause Award',
         awardDate: '04/07/2023',
-        awardNote: 'Received from Deloitte USI while working for Google'
+        awardNote: 'Received from Deloitte USI while working for AARP'
     },
     {
         awardname: 'Applause Award',

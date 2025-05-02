@@ -1,5 +1,13 @@
 let educationList = [
 	{
+		certificateId: "h2025N050217k1620317",
+		certificateName: "Master of Business Administration in Artificial Intelligence & Machine Learning",
+		instituteName: "Dr. D. Y. Patil University, Pune with 9.11 CGPA, A+ Grade",
+		instituteIcon: "assets/img/icons/dypatil_icon.jpeg",
+		courseContent: ["<VMCSH>Semester 1</VMCSH>", "Principles & Practices Of Management", "Organizational Behaviour", "Management Accounting", "Managerial Economics", "Business Communication", "Research Methodology", "Environmental Awareness and Disaster Management", "<VMCSH>Semester 2</VMCSH>", "Human Resource Management", "Marketing Management", "Financial Management", "Operations Management", "Management Information System", "Strategic Management and Business Policy", "Entrepreneurship Development", "<VMCSH>Semester 3</VMCSH>", "Basics of Artificial Intelligence & Machine Learning", "Machine Learning", "Performing Analytics with Python", "Statistics & Quantitative Techniques", "Business Intelligence", "R-Programming for Data Analysis and Visualization", "Digital Marketing", "<VMCSH>Semester 4</VMCSH>", "Application of AI in Business ", "Introduction to Deep Learning", "Business Ethics & Corporate Governance", "Final Year Software Project along with Report"],
+		keywords: ['mba', "mba in ai ml", 'degree', 'masters degree', 'graduation', 'dy patil', 'dy patil university', 'college']
+	},
+	{
 		certificateId: "v2023W072201x3244520",
 		certificateName: "Bachelor of Science in Information Technology",
 		instituteName: "Narsee Monjee College of Commerce and Economics with 8.33 CGPA, A Grade - Mumbai University",
