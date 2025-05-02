@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Explore Vaibhav Mojidra's passion, apps, education, work experiences, skills, and more on his official website. Discover code samples and achievements in tech." />
+	<meta name="copyright" content="Vaibhav Mojidra" />
+	<meta name="keywords"
+		content="vaibhav,mojidra,Vaibhav Mojidra,vaibhav mojidra,Vaibhav,mojidra,java,python,android java,android,react native,flutter,ios,swift,kotlin" />
+	<meta name="DC.title" content="Vaibhav Mojidra" />
+	<meta name="title" content="Vaibhav Mojidra" />
+	<meta name="robots" content="index,follow">
+	<meta name="author" content="Vaibhav Mojidra" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://vaibhavmojidra.github.io/site/">
+	<meta property="og:title" content="Vaibhav Mojidra">
+	<meta property="og:description"
+		content="Explore Vaibhav Mojidra's passion, apps, education, work experiences, skills, and more on his official website. Discover code samples and achievements in tech.">
+	<meta property="og:image" content="assets/img/profile/tab_icon.png">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://vaibhavmojidra.github.io/site/">
+	<meta property="twitter:title" content="Vaibhav Mojidra">
+	<meta property="twitter:description"
+		content="Explore Vaibhav Mojidra's passion, apps, education, work experiences, skills, and more on his official website. Discover code samples and achievements in tech.">
+	<meta property="twitter:image" content="assets/img/profile/tab_icon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/my_css.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bs4pop.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/maintabcommancss.css" />
+	<script type="text/javascript" src="assets/js/my_script.js"></script>
+	<script type="text/javascript" src="assets/js/bs4pop.js"></script>
+	<script type="text/javascript" src="assets/js/apps.js"></script>
+	<script type="text/javascript" src="assets/js/github_repos.js"></script>
+	<script type="text/javascript" src="assets/js/work.js"></script>
+	<script type="text/javascript" src="assets/js/skills.js"></script>
+	<script type="text/javascript" src="assets/js/education_certificate.js"></script>
+	<script type="text/javascript" src="assets/js/highlights.js"></script>
+	<script type="text/javascript" src="assets/js/socialids.js"></script>
+	<script type="text/javascript" src="assets/jsshortcuts/educationcertification.js"></script>
+	<script type="text/javascript" src="assets/jsshortcuts/searchListener.js"></script>
+	<script type="text/javascript" src="assets/jsshortcuts/commonkeylisteners.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(() => {
+			initNav()
+			let status = (getDarkModeStatus() === "ON" ? true : false)
+			document.getElementById("darkModeSwitch").src = status ? "assets/img/nav/on.png" : "assets/img/nav/off.png"
+			darkMode(status)
+			document.getElementById('mainDiv').style.paddingLeft = isMobile() ? "auto" : "20px"
+			initEducation()
+			initInstitute()
+			initProfessional()
+			initOnline()
+			initOthers()
+			setTimeout(() => {
+				bs4pop.notice('Tap or Click on any to view its content', {
+					type: status ? 'dark' : 'primary',
+					position: 'bottomright',
+					appendType: 'append',
+					closeBtn: 'true',
+					className: ''
+				})
+			}, 2000)
+
+			setTimeout(() => {
+				bs4pop.notice('Got any feedback & suggestions? <a href="feedback.html">Click Here</a>', {
+					type: 'info',
+					position: 'bottomright',
+					appendType: 'append',
+					closeBtn: 'true',
+					className: '',
+					autoClose: '10000'
+				})
+			}, 20000)
+			setKeyListener()
+			validateTheParams()
+			cleanUpBeforeClosingSearch()
+			fillHelpInfo()
+		})
+
+		const validateTheParams = () => {
+			const queryString = window.location.search
+			const params = new URLSearchParams(queryString)
+			let certID = params.get('certID')
+			let certType = params.get('certType')
+			if (certID != null && certType != null) {
+				try {
+					showContent(certType, certID)
+					history.replaceState({}, null, 'education_certifications.html')
+				} catch (e) {
+					isContentListOpen = false
+					history.replaceState({}, null, 'education_certifications.html')
+				}
+			}
+		}
+
+		const getBoilerPlate = (certificateType, certificateId, certificateName, instituteName, instituteIcon, courseContent) => (isMobile() ?
+			`<div onclick="showContent('${certificateType}','${certificateId}')"><table style="margin-bottom:20px;cursor:pointer"><tr><td><img src="${instituteIcon}" class="my_fade_in" loading="lazy" style="margin-right:10px;border-radius:5px;" width="50px" height="50px"></td><td style="vertical-align:middle"><span style="font-size:22px" class="my_text my_fade_in">${certificateName}</span></td></tr><tr><td style="vertical-align:middle" colspan="2" style="padding-top:5px"><span style="font-size: 14px" class="my_text my_fade_in">${instituteName}</span></td></tr></table></div>`
+			: `<div onclick="showContent('${certificateType}','${certificateId}')"><table style="margin-bottom:20px;cursor:pointer"> <tr><td rowspan="2"><img src="${instituteIcon}" class="my_fade_in" loading="lazy" style="margin-right:20px;border-radius:5px" width="50px" height="50px"></td><td style="vertical-align:middle"><span style="font-size:26px" class="my_text my_fade_in">${certificateName}</span></td></tr><tr><td style="vertical-align:middle"><span style="font-size:16px" class="my_text my_fade_in">${instituteName}</span></td></tr></table></div>`)
+
+		const initProfessional = () => {
+			let text = ""
+			professionalCertificateList.forEach(cert => {
+				text += getBoilerPlate("PROFESSIONAL", cert.certificateId, cert.certificateName, cert.instituteName, cert.instituteIcon, cert.courseContent)
+			})
+			document.getElementById("professionalCertificationDiv").innerHTML = text
+		}
+
+		const initInstitute = () => {
+			let text = ""
+			instituteCertificateList.forEach(cert => {
+				text += getBoilerPlate("INSTITUTE", cert.certificateId, cert.certificateName, cert.instituteName, cert.instituteIcon, cert.courseContent)
+			})
+			document.getElementById("instituteCertificationDiv").innerHTML = text
+		}
+
+		const initOthers = () => {
+			let text = ""
+			otherCertificateList.forEach(cert => {
+				text += getBoilerPlate("OTHER", cert.certificateId, cert.certificateName, cert.instituteName, cert.instituteIcon, cert.courseContent)
+			})
+			document.getElementById("otherCertificationDiv").innerHTML = text
+		}
+
+
+		const initOnline = () => {
+			let text = ""
+			onlineCertificateList.forEach(cert => {
+				text += getBoilerPlate("ONLINE", cert.certificateId, cert.certificateName, cert.instituteName, cert.instituteIcon, cert.courseContent)
+			})
+			document.getElementById("onlineCertificationDiv").innerHTML = text
+		}
+
+		const initEducation = () => {
+			let text = ""
+			educationList.forEach(cert => {
+				text += getBoilerPlate("EDUCATION", cert.certificateId, cert.certificateName, cert.instituteName, cert.instituteIcon, cert.courseContent)
+			})
+			document.getElementById("education").innerHTML = text
+		}
+
+		const showContent = (certificateType, certificateId) => {
+			let contentList = []
+			switch (certificateType) {
+				case "EDUCATION":
+					contentList = educationList.find(item => item.certificateId === certificateId).courseContent
+					break
+				case "PROFESSIONAL":
+					contentList = professionalCertificateList.find(item => item.certificateId === certificateId).courseContent
+					break
+				case "INSTITUTE":
+					contentList = instituteCertificateList.find(item => item.certificateId === certificateId).courseContent
+					break
+				case "ONLINE":
+					contentList = onlineCertificateList.find(item => item.certificateId === certificateId).courseContent
+					break
+				case "OTHER":
+					contentList = otherCertificateList.find(item => item.certificateId === certificateId).courseContent
+					break
+			}
+			setDialogContent(contentList)
+			openDialogDiv()
+		}
+		const openDialogDiv = () => {
+			document.getElementById("MyButtonsDiv").style.height = "100vh"
+			document.getElementById("MyButtonsDiv").style.marginTop = "0vh"
+			document.getElementById("MyButtonsDiv").style.opacity = "1"
+			document.getElementById("MyButtonsDiv").style.borderRadius = "0px"
+			isContentListOpen = true
+		}
+		const closeDialogDiv = () => {
+			document.getElementById("MyButtonsDiv").style.height = "0vh"
+			document.getElementById("MyButtonsDiv").style.marginTop = "100vh"
+			document.getElementById("MyButtonsDiv").style.opacity = "0.3"
+			document.getElementById("MyButtonsDiv").style.borderRadius = "10px"
+			isContentListOpen = false
+		}
+		const setDialogContent = (stringList) => {
+			let text = ""
+			stringList.forEach((element, index) => {
+				if (element.startsWith("<VMCSH>")) {
+					if (index == 0) {
+						text += '<h5 class="my_text" style="padding-left: 12px;margin-bottom:25px">' + element.toUpperCase() + '</h5>'
+						return
+					}
+					text += '<h5 class="my_text" style="padding-left: 12px;margin-top:25px;margin-bottom:25px">' + element.toUpperCase() + '</h5>'
+					return
+				}
+				text += '<p class="my_text" style="padding-left: 15px">✓ ' + element + '</p>'
+			})
+			document.getElementById("dialogContent").innerHTML = text
+		}
+	</script>
+	<title>Vaibhav Mojidra</title>
+	<link rel="icon" href="assets/img/profile/tab_icon.png" type="image/x-icon">
+	<style>
+		#MyButtonsDiv {
+			height: 0vh;
+			width: 100vw;
+			position: fixed;
+			z-index: 4000;
+			margin-top: 100vh;
+			margin-bottom: 0vh;
+			margin-left: 0vw;
+			margin-right: 0vw;
+			opacity: 0.3;
+			background-color: var(--page_bg);
+			overflow-x: hidden;
+			overflow-y: hidden;
+			transition: 1.2s;
+			text-align: center;
+		}
+
+		#headerDiv {
+			width: 100%;
+			height: 50px;
+		}
+
+		#closeDiv {
+			float: right;
+			display: inline-block;
+			width: 70px;
+			height: 100%;
+			cursor: pointer;
+		}
+
+		#titleDiv {
+			float: left;
+			display: inline-block;
+			width: -moz-calc(100% - 70px);
+			width: -webkit-calc(100% - 70px);
+			width: calc(100% - 70px);
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body class="page_background" onbeforeunload="educationUnLoad()">
+
+	<div id="searchDialog" class="my_fade_in"
+		style="background-color: #121212F0;position: fixed;z-index: 6000;height: 100vh;width: 100vw;padding-bottom: 10vh;visibility: hidden;opacity: 0; transition: 1s;">
+		<div style="height: 10vh;">
+
+			<span style="right:0;margin-right:10px;margin-top:10px;position: absolute;cursor: pointer;"
+				onclick="closeSearchDialog()">
+				<img src="assets/img/highlights/icons/dark/close.png" style="width: 22px;height: 22px;" />
+			</span>
+		</div>
+		<div class="my_fade_in" id="searchSuggestion" onclick="onSearchSuggestionClick()"
+			style="width: fit-content;margin-left: 5vw;margin-right: 5vw;color: #DEE4E7;background-color: #d3d2d21a;border-color: #ffefb9;border-width: 0.2px;border-style: solid;margin-bottom: 15px;border-radius: 100px;padding-left: 10px;padding-right:15px;font-size: 13px;display: none;cursor: pointer;">
+			💡 <i>Searching for <b id="searchSuggestionSection"></b>?</i>
+		</div>
+		<input type="text" class="my_fade_in"
+			style="background-color: #FDFDFD1A;width: 90vw;margin-left: 5vw;color: #DEE4E7;border:0;height: 36px;border-radius: 100px;padding-left: 20px;margin-bottom: 20px;"
+			placeholder="Search anything..." id="searchTermTB" onkeyup="getSearchResults(this)" />
+
+
+		<div class="dropdown my_fade_in">
+			<button class="my_search_dropdown"
+				style="background-color: #FDFDFD1A;border: none;outline: none;margin-left: 5vw;width: 90vw;border-radius: 100px;text-align: start;height: 36px;padding-left: 20px;"
+				type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropDownValue">
+				▼ Search in All
+			</button>
+			<div class="dropdown-menu my_fade_in" aria-labelledby="dropdownMenu2"
+				style="background-color: #121212EA;border-radius: 10px;" id="searchDropDownId">
+			</div>
+		</div>
+		<div style="margin-left: 5vw;width: 90vw;overflow-y: auto;height: calc(86% - 92px);margin-top: 10px;padding-top: 10px;padding-bottom: 10px; padding-left: 10px; padding-right: 10px;"
+			id="searchResultArea">
+		</div>
+	</div>
+
+
+	<div id="helpDialog" class="my_fade_in"
+		style="background-color: #121212F0;position: fixed;z-index: 5000;height: 100vh;width: 100vw;padding-bottom: 10vh;visibility: hidden;opacity: 0; transition: 1s;">
+		<div style="height: 10vh;">
+
+			<span style="right:0;margin-right:10px;margin-top:10px;position: absolute;cursor: pointer;"
+				onclick="closeHelphDialog()">
+				<img src="assets/img/highlights/icons/dark/close.png" style="width: 22px;height: 22px;" />
+			</span>
+		</div>
+		<div style="overflow-y: auto;scroll-behavior: auto;height: 90vh;padding-bottom: 10px;color: #FDFDFD;"
+			id="helpInfoText">
+
+		</div>
+	</div>
+
+	<div id="MyButtonsDiv">
+		<div id="headerDiv" style="margin-top: 10px">
+			<div id="titleDiv" style="text-align: left">
+				<span style="font-size: 30px;padding-left: 15px" class="my_text">Content</span>
+			</div>
+			<div id="closeDiv" style="padding-top: 6px" onclick="closeDialogDiv()">
+				<span>
+					<img src="assets/img/highlights/icons/light/close.png" id="closeImageBtn"
+						style="width: 27px;height: 27px" />
+				</span>
+			</div>
+		</div>
+		<div style="overflow-y: auto; overflow: scroll;height: calc(100% - 70px);text-align: left;margin-top: 20px;"
+			id="dialogContent">
+
+		</div>
+	</div>
+	<div>
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark nav_bar_background">
+			<a class="navbar-brand" href="#" onclick="openSearchDialog()">Vaibhav Mojidra</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Profile</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link">Education & Certifications</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="work_exp.html">Work Experience</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="skills.html">Skills</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="apps" href="apps.html">Apps</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="github_repo" href="github_repos.html">Github repositories</a>
+					</li>
+					<li class="nav-item active" id="helpLabel">
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="nav-item active" id="darkModeLabel">
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid" id="mainDiv" style="margin-top: 10px;margin-bottom: 10px">
+			<h2 class="my_text my_fade_in" style="margin-top: 25px;">Education</h2>
+			<div id="education" style="margin-top:20px;margin-bottom: 30px"></div>
+			<h2 class="my_text my_fade_in" style="margin-bottom: 20px;">Professional Certification</h2>
+			<div id="professionalCertificationDiv" style="margin-bottom: 30px"></div>
+			<h2 class="my_text my_fade_in" style="margin-bottom: 20px;">Institute Certification</h2>
+			<div id="instituteCertificationDiv" style="margin-bottom: 30px"></div>
+			<h2 class="my_text my_fade_in" style="margin-bottom: 20px;">Online Certification</h2>
+			<div id="onlineCertificationDiv" style="margin-bottom: 30px"></div>
+			<h2 class="my_text my_fade_in" style="margin-bottom: 20px;">Other Certification</h2>
+			<div id="otherCertificationDiv" style="margin-bottom: 30px"></div>
+		</div>
+	</div>
+</body>
+
+</html>
